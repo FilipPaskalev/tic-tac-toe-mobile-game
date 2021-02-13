@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, TouchableOpacity, Image } from "react-native";
 
 interface SquareButtonProps {
   passStyles: object;
@@ -8,12 +8,12 @@ interface SquareButtonProps {
 
 function SquareButton() {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Image
         style={styles.icon}
         source={require("../../assets/icons/user.png")}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 
