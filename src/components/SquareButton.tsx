@@ -1,18 +1,27 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 interface SquareButtonProps {
-  passStyles: object;
-  navigateToScreen: string;
+  navigateToScreen?: string;
 }
 
-function SquareButton() {
+function SquareButton({ navigateToScreen }: SquareButtonProps) {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigateToScreen && navigateToScreen
+          ? navigation.navigate(navigateToScreen)
+          : undefined
+      }
+    >
       <Image
-        style={styles.icon}
         source={require("../../assets/icons/user.png")}
-      />
+        style={styles.icon}
+      ></Image>
     </TouchableOpacity>
   );
 }
