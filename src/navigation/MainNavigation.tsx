@@ -18,20 +18,20 @@ import { SCREEN_INFO } from "../constants/ScreensInfo";
 /** Components */
 import CustomHeader from "../components/CustomHeader";
 
-const Stack = createStackNavigator();
+const MainStack = createStackNavigator();
 
 function MainNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <MainStack.Navigator>
+        <MainStack.Screen
           name={SCREEN_INFO.HOME.NAME}
           component={HomeScreen}
           options={{
             headerTitle: () => <CustomHeader title={SCREEN_INFO.HOME.TITLE} />,
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.PROFILE.NAME}
           component={ProfileScreen}
           options={{
@@ -40,7 +40,7 @@ function MainNavigation() {
             ),
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.SETTINGS.NAME}
           component={SettingsScreen}
           options={{
@@ -49,14 +49,14 @@ function MainNavigation() {
             ),
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.FAQ.NAME}
           component={FaqScreen}
           options={{
             headerTitle: () => <CustomHeader title={SCREEN_INFO.FAQ.TITLE} />,
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.ONE_PLAYER.NAME}
           component={OnePlayerScreen}
           options={{
@@ -65,7 +65,7 @@ function MainNavigation() {
             ),
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.TWO_PLAYERS.NAME}
           component={TwoPlayersScreen}
           options={{
@@ -74,7 +74,7 @@ function MainNavigation() {
             ),
           }}
         />
-        <Stack.Screen
+        <MainStack.Screen
           name={SCREEN_INFO.MULTIPLAYER.NAME}
           component={MultiplayerScreen}
           options={{
@@ -83,7 +83,7 @@ function MainNavigation() {
             ),
           }}
         />
-      </Stack.Navigator>
+      </MainStack.Navigator>
     </NavigationContainer>
   );
 }
