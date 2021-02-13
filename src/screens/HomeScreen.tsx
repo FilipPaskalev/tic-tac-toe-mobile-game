@@ -5,7 +5,9 @@ import { StyleSheet, Text, View } from "react-native";
 function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text style={{ width: "100%", borderWidth: 1 }}>
+        Open up App.tsx to start working on your app!
+      </Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     // borderWidth: 1,
-    marginHorizontal: 16,
+    paddingHorizontal: 16,
   },
 });
 
