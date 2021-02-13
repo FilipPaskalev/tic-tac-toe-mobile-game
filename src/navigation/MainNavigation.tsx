@@ -28,6 +28,7 @@ function MainNavigation() {
           name={SCREEN_INFO.HOME.NAME}
           component={HomeScreen}
           options={{
+            headerTransparent: true,
             headerTitle: () => <CustomHeader title={SCREEN_INFO.HOME.TITLE} />,
           }}
         />
