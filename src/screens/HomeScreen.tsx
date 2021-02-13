@@ -14,9 +14,11 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#de9191",
     alignItems: "center",
     justifyContent: "center",
+    // borderWidth: 1,
+    marginHorizontal: 16,
   },
 });
 

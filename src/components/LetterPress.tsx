@@ -1,8 +1,12 @@
 import React from "react";
 import { useFonts } from "expo-font";
-import { View, Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
-function LetterPress() {
+type LetterPressProps = {
+  context: string;
+};
+
+function LetterPress({ context }: LetterPressProps) {
   const [loaded] = useFonts({
     TitanOneRegular: require("../../assets/fonts/TitanOne-Regular.ttf"),
   });
@@ -11,13 +15,14 @@ function LetterPress() {
     return null;
   }
 
-  return (
-    <View>
-      <Text style={{ fontFamily: "TitanOneRegular", fontSize: 30 }}>
-        TitanOneRegular
-      </Text>
-    </View>
-  );
+  return <Text style={styles.text}>{context}</Text>;
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: "TitanOneRegular",
+    fontSize: 30,
+  },
+});
 
 export default LetterPress;
