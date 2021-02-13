@@ -11,7 +11,7 @@ function CustomHeader({ title }: TitleProps) {
   return (
     <View style={styles.container}>
       <SquareButton />
-      <LetterPress context={title} />
+      <LetterPress context={title} setFontSize={36} />
       <SquareButton />
     </View>
   );
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 1,
+    fontSize: 30,
   },
 });
 
