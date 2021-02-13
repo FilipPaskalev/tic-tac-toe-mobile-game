@@ -7,4 +7,7 @@ export const GRAPHICS = {
     FAQ: require("../../assets/icons/faq.png"),
     EMPTY: require("../../assets/icons/empty.png"),
   },
+  IMAGES: {
+    LOGO: require("../../assets/images/logo.png"),
+  },
 };
