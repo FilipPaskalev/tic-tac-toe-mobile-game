@@ -9,7 +9,7 @@ type LetterPressProps = {
 
 function LetterPress({ context, setFontSize }: LetterPressProps) {
   const [loaded] = useFonts({
-    TitanOneRegular: require("../../assets/fonts/TitanOne-Regular.ttf"),
+    Agentorange: require("../../assets/fonts/Agentorange.ttf"),
   });
 
   if (!loaded) {
@@ -25,11 +25,12 @@ function LetterPress({ context, setFontSize }: LetterPressProps) {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   text: {
-    fontFamily: "TitanOneRegular",
-    fontSize: 24,
+    fontFamily: "Agentorange",
+    fontSize: 14,
+    color: "#060e3c",
   },
 });
 
