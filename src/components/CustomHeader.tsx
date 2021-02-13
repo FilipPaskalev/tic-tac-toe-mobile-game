@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { GRAPHICS } from "../constants/Graphics";
 
 /** Constants */
 import { SCREEN_INFO } from "../constants/ScreensInfo";
+import { GRAPHICS } from "../constants/Graphics";
 
 /** Components */
 import LetterPress from "./LetterPress";
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    // borderWidth: 1,
+    borderWidth: 1,
     fontSize: 30,
   },
 });
