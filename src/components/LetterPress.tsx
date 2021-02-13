@@ -1,6 +1,6 @@
 import React from "react";
 import { useFonts } from "expo-font";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 type LetterPressProps = {
   context: string;
@@ -15,13 +15,20 @@ function LetterPress({ context }: LetterPressProps) {
     return null;
   }
 
-  return <Text style={styles.text}>{context}</Text>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>{context}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    borderWidth: 1,
+  },
   text: {
     fontFamily: "TitanOneRegular",
-    fontSize: 30,
+    fontSize: 24,
   },
 });
 
