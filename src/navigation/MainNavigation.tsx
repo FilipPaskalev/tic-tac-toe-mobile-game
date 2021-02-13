@@ -1,7 +1,6 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { useFonts } from "expo-font";
 
 /** Screens */
 import HomeScreen from "../screens/HomeScreen";
@@ -23,12 +22,16 @@ const MainStack = createStackNavigator();
 function MainNavigation() {
   return (
     <NavigationContainer>
-      <MainStack.Navigator>
+      <MainStack.Navigator
+        screenOptions={{
+          headerTransparent: true,
+        }}
+      >
         <MainStack.Screen
           name={SCREEN_INFO.HOME.NAME}
           component={HomeScreen}
           options={{
-            headerTransparent: true,
+            title: SCREEN_INFO.HOME.TITLE,
             headerTitle: () => <CustomHeader title={SCREEN_INFO.HOME.TITLE} />,
           }}
         />
@@ -36,6 +39,7 @@ function MainNavigation() {
           name={SCREEN_INFO.PROFILE.NAME}
           component={ProfileScreen}
           options={{
+            title: SCREEN_INFO.PROFILE.TITLE,
             headerTitle: () => (
               <CustomHeader title={SCREEN_INFO.PROFILE.TITLE} />
             ),
@@ -45,6 +49,7 @@ function MainNavigation() {
           name={SCREEN_INFO.SETTINGS.NAME}
           component={SettingsScreen}
           options={{
+            title: SCREEN_INFO.SETTINGS.TITLE,
             headerTitle: () => (
               <CustomHeader title={SCREEN_INFO.SETTINGS.TITLE} />
             ),
@@ -54,6 +59,7 @@ function MainNavigation() {
           name={SCREEN_INFO.FAQ.NAME}
           component={FaqScreen}
           options={{
+            title: SCREEN_INFO.FAQ.TITLE,
             headerTitle: () => <CustomHeader title={SCREEN_INFO.FAQ.TITLE} />,
           }}
         />
@@ -61,6 +67,7 @@ function MainNavigation() {
           name={SCREEN_INFO.ONE_PLAYER.NAME}
           component={OnePlayerScreen}
           options={{
+            title: SCREEN_INFO.ONE_PLAYER.TITLE,
             headerTitle: () => (
               <CustomHeader title={SCREEN_INFO.ONE_PLAYER.TITLE} />
             ),
@@ -70,6 +77,7 @@ function MainNavigation() {
           name={SCREEN_INFO.TWO_PLAYERS.NAME}
           component={TwoPlayersScreen}
           options={{
+            title: SCREEN_INFO.TWO_PLAYERS.TITLE,
             headerTitle: () => (
               <CustomHeader title={SCREEN_INFO.TWO_PLAYERS.TITLE} />
             ),
@@ -79,6 +87,7 @@ function MainNavigation() {
           name={SCREEN_INFO.MULTIPLAYER.NAME}
           component={MultiplayerScreen}
           options={{
+            title: SCREEN_INFO.MULTIPLAYER.TITLE,
             headerTitle: () => (
               <CustomHeader title={SCREEN_INFO.MULTIPLAYER.TITLE} />
             ),
