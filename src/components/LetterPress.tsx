@@ -4,9 +4,10 @@ import { StyleSheet, View, Text } from "react-native";
 
 type LetterPressProps = {
   context: string;
+  setFontSize?: number;
 };
 
-function LetterPress({ context }: LetterPressProps) {
+function LetterPress({ context, setFontSize }: LetterPressProps) {
   const [loaded] = useFonts({
     TitanOneRegular: require("../../assets/fonts/TitanOne-Regular.ttf"),
   });
@@ -17,7 +18,7 @@ function LetterPress({ context }: LetterPressProps) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{context}</Text>
+      <Text style={[styles.text, { fontSize: setFontSize }]}>{context}</Text>
     </View>
   );
 }
