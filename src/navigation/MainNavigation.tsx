@@ -10,7 +10,9 @@ import FaqScreen from "../screens/FaqScreen";
 import OnePlayerScreen from "../screens/OnePlayerScreen";
 import TwoPlayersScreen from "../screens/TwoPlayersScreen";
 import MultiplayerScreen from "../screens/MultiplayerScreen";
-import { ScreenNames } from "../enums/ScreenNames";
+
+/** Constants */
+import { SCREEN_INFO } from "../constants/ScreensInfo";
 
 const Stack = createStackNavigator();
 
@@ -18,20 +20,26 @@ function MainNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={ScreenNames.HOME} component={HomeScreen} />
-        <Stack.Screen name={ScreenNames.PROFILE} component={ProfileScreen} />
-        <Stack.Screen name={ScreenNames.SETTINGS} component={SettingsScreen} />
-        <Stack.Screen name={ScreenNames.FAQ} component={FaqScreen} />
+        <Stack.Screen name={SCREEN_INFO.HOME.NAME} component={HomeScreen} />
         <Stack.Screen
-          name={ScreenNames.ONE_PLAYER}
+          name={SCREEN_INFO.PROFILE.NAME}
+          component={ProfileScreen}
+        />
+        <Stack.Screen
+          name={SCREEN_INFO.SETTINGS.NAME}
+          component={SettingsScreen}
+        />
+        <Stack.Screen name={SCREEN_INFO.FAQ.NAME} component={FaqScreen} />
+        <Stack.Screen
+          name={SCREEN_INFO.ONE_PLAYER.NAME}
           component={OnePlayerScreen}
         />
         <Stack.Screen
-          name={ScreenNames.TWO_PLAYERS}
+          name={SCREEN_INFO.TWO_PLAYERS.NAME}
           component={TwoPlayersScreen}
         />
         <Stack.Screen
-          name={ScreenNames.MULTIPLAYER}
+          name={SCREEN_INFO.MULTIPLAYER.NAME}
           component={MultiplayerScreen}
         />
       </Stack.Navigator>
