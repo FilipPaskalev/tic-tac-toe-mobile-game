@@ -5,5 +5,6 @@ export const GRAPHICS = {
     SAVE: require("../../assets/icons/save.png"),
     RATE_US: require("../../assets/icons/star.png"),
     FAQ: require("../../assets/icons/faq.png"),
+    EMPTY: require("../../assets/icons/empty.png"),
   },
 };
