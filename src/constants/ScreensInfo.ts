@@ -1,9 +1,9 @@
 export const SCREEN_INFO = {
-  HOME: { TITLE: "Tic Tac Toe", NAME: "HomeScreen" },
-  PROFILE: { TITLE: "My Profile", NAME: "ProfileScreen" },
-  SETTINGS: { TITLE: "Options", NAME: "SettingsScreen" },
-  FAQ: { TITLE: "HELP / FAQ", NAME: "FaqScreen" },
-  ONE_PLAYER: { TITLE: "Player vs AI", NAME: "OnePlayerScreen" },
-  TWO_PLAYERS: { TITLE: "2 Players", NAME: "TwoPlayersScreen" },
-  MULTIPLAYER: { TITLE: "Multiplayer", NAME: "MultiplayerScreen" },
+  HOME: { title: "Tic Tac Toe", name: "HomeScreen" },
+  PROFILE: { title: "My Profile", name: "ProfileScreen" },
+  SETTINGS: { title: "Options", name: "SettingsScreen" },
+  FAQ: { title: "HELP / FAQ", name: "FaqScreen" },
+  ONE_PLAYER: { title: "Player vs AI", name: "OnePlayerScreen" },
+  TWO_PLAYERS: { title: "2 Players", name: "TwoPlayersScreen" },
+  MULTIPLAYER: { title: "Multiplayer", name: "MultiplayerScreen" },
 };
