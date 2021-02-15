@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
 /** Constants */
-import { SCREEN_INFO } from "../constants/ScreensInfo";
+import { getScreenTitle, SCREEN_INFO } from "../constants/ScreensInfo";
 import { GRAPHICS } from "../constants/Graphics";
 
 /** Custom components */
@@ -14,41 +14,7 @@ import SquareButton from "./SquareButton";
 
 function CustomHeader() {
   const route = useRoute();
-  let title: string = route.name;
-
-  switch (title) {
-    case SCREEN_INFO.HOME.name: {
-      title = SCREEN_INFO.HOME.title;
-      break;
-    }
-    case SCREEN_INFO.PROFILE.name: {
-      title = SCREEN_INFO.PROFILE.title;
-      break;
-    }
-    case SCREEN_INFO.SETTINGS.name: {
-      title = SCREEN_INFO.SETTINGS.title;
-      break;
-    }
-    case SCREEN_INFO.ONE_PLAYER.name: {
-      title = SCREEN_INFO.ONE_PLAYER.title;
-      break;
-    }
-    case SCREEN_INFO.TWO_PLAYERS.name: {
-      title = SCREEN_INFO.TWO_PLAYERS.title;
-      break;
-    }
-    case SCREEN_INFO.MULTIPLAYER.name: {
-      title = SCREEN_INFO.MULTIPLAYER.title;
-      break;
-    }
-    case SCREEN_INFO.FAQ.name: {
-      title = SCREEN_INFO.FAQ.title;
-      break;
-    }
-    default: {
-      break;
-    }
-  }
+  let title = getScreenTitle(route.name);
 
   function setLeftIcon() {
     if (title === SCREEN_INFO.HOME.title) {
