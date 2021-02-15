@@ -4,13 +4,13 @@ import { StyleSheet, View, Text } from "react-native";
 
 type LetterPressProps = {
   content: string;
-  setFontSize?: number;
+  textStyles?: object;
   containerStyles?: object;
 };
 
 function LetterPress({
   content,
-  setFontSize,
+  textStyles,
   containerStyles,
 }: LetterPressProps) {
   const [loaded] = useFonts({
@@ -23,7 +23,7 @@ function LetterPress({
 
   return (
     <View style={[styles.container, containerStyles]}>
-      <Text style={[styles.text, { fontSize: setFontSize }]}>{content}</Text>
+      <Text style={[styles.text, textStyles]}>{content}</Text>
     </View>
   );
 }
