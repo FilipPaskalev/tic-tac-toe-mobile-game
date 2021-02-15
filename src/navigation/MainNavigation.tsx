@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useRoute } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 /** Screens */
@@ -14,7 +14,7 @@ import MultiplayerScreen from "../screens/MultiplayerScreen";
 /** Constants */
 import { SCREEN_INFO } from "../constants/ScreensInfo";
 
-/** Components */
+/** Custom components */
 import CustomHeader from "../components/CustomHeader";
 
 const MainStack = createStackNavigator();
@@ -25,73 +25,36 @@ function MainNavigation() {
       <MainStack.Navigator
         screenOptions={{
           headerTransparent: true,
+          headerTitle: () => <CustomHeader />,
         }}
       >
+        {/* prettier-ignore */}
+        <MainStack.Screen 
+          name={SCREEN_INFO.HOME.name} 
+          component={HomeScreen} />
         <MainStack.Screen
-          name={SCREEN_INFO.HOME.NAME}
-          component={HomeScreen}
-          options={{
-            title: SCREEN_INFO.HOME.TITLE,
-            headerTitle: () => <CustomHeader title={SCREEN_INFO.HOME.TITLE} />,
-          }}
-        />
-        <MainStack.Screen
-          name={SCREEN_INFO.PROFILE.NAME}
+          name={SCREEN_INFO.PROFILE.name}
           component={ProfileScreen}
-          options={{
-            title: SCREEN_INFO.PROFILE.TITLE,
-            headerTitle: () => (
-              <CustomHeader title={SCREEN_INFO.PROFILE.TITLE} />
-            ),
-          }}
         />
         <MainStack.Screen
-          name={SCREEN_INFO.SETTINGS.NAME}
+          name={SCREEN_INFO.SETTINGS.name}
           component={SettingsScreen}
-          options={{
-            title: SCREEN_INFO.SETTINGS.TITLE,
-            headerTitle: () => (
-              <CustomHeader title={SCREEN_INFO.SETTINGS.TITLE} />
-            ),
-          }}
         />
+        {/* prettier-ignore */}
+        <MainStack.Screen 
+          name={SCREEN_INFO.FAQ.name} 
+          component={FaqScreen} />
         <MainStack.Screen
-          name={SCREEN_INFO.FAQ.NAME}
-          component={FaqScreen}
-          options={{
-            title: SCREEN_INFO.FAQ.TITLE,
-            headerTitle: () => <CustomHeader title={SCREEN_INFO.FAQ.TITLE} />,
-          }}
-        />
-        <MainStack.Screen
-          name={SCREEN_INFO.ONE_PLAYER.NAME}
+          name={SCREEN_INFO.ONE_PLAYER.name}
           component={OnePlayerScreen}
-          options={{
-            title: SCREEN_INFO.ONE_PLAYER.TITLE,
-            headerTitle: () => (
-              <CustomHeader title={SCREEN_INFO.ONE_PLAYER.TITLE} />
-            ),
-          }}
         />
         <MainStack.Screen
-          name={SCREEN_INFO.TWO_PLAYERS.NAME}
+          name={SCREEN_INFO.TWO_PLAYERS.name}
           component={TwoPlayersScreen}
-          options={{
-            title: SCREEN_INFO.TWO_PLAYERS.TITLE,
-            headerTitle: () => (
-              <CustomHeader title={SCREEN_INFO.TWO_PLAYERS.TITLE} />
-            ),
-          }}
         />
         <MainStack.Screen
-          name={SCREEN_INFO.MULTIPLAYER.NAME}
+          name={SCREEN_INFO.MULTIPLAYER.name}
           component={MultiplayerScreen}
-          options={{
-            title: SCREEN_INFO.MULTIPLAYER.TITLE,
-            headerTitle: () => (
-              <CustomHeader title={SCREEN_INFO.MULTIPLAYER.TITLE} />
-            ),
-          }}
         />
       </MainStack.Navigator>
     </NavigationContainer>
