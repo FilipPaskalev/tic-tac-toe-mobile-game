@@ -5,9 +5,14 @@ import { StyleSheet, View, Text } from "react-native";
 type LetterPressProps = {
   context: string;
   setFontSize?: number;
+  containerStyles?: object;
 };
 
-function LetterPress({ context, setFontSize }: LetterPressProps) {
+function LetterPress({
+  context,
+  setFontSize,
+  containerStyles,
+}: LetterPressProps) {
   const [loaded] = useFonts({
     Agentorange: require("../../assets/fonts/Agentorange.ttf"),
   });
@@ -17,7 +22,7 @@ function LetterPress({ context, setFontSize }: LetterPressProps) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyles]}>
       <Text style={[styles.text, { fontSize: setFontSize }]}>{context}</Text>
     </View>
   );
