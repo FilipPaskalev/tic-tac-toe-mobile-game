@@ -7,29 +7,42 @@ import { useHeaderHeight } from "@react-navigation/stack";
 
 /** Constants */
 import { GRAPHICS } from "../constants/Graphics";
+import { COLORS } from "../constants/Colors";
 
 /** Custom components */
 import FlatButton from "../components/FlatButton";
 import SquareButton from "../components/SquareButton";
 import { SCREEN_INFO } from "../constants/ScreensInfo";
-import { COLORS } from "../constants/Colors";
 
 function HomeScreen() {
+  const headerHeight = useHeaderHeight();
   return (
-    <View style={[styles.screen, { paddingTop: useHeaderHeight() }]}>
+    <View style={[styles.screen, { paddingTop: headerHeight }]}>
       <StatusBar style="auto" />
       <Image source={GRAPHICS.IMAGES.logo} style={styles.logoContainer} />
       <View style={styles.buttonsContainer}>
-        <FlatButton label={"Player vs AI"} buttonStyles={styles.button} />
-        <FlatButton label={"Player vs Player"} buttonStyles={styles.button} />
-        <FlatButton label={"Play online"} buttonStyles={styles.button} />
+        <FlatButton
+          label={"Player vs AI"}
+          buttonStyles={styles.button}
+          goToScreen={SCREEN_INFO.ONE_PLAYER.name}
+        />
+        <FlatButton
+          label={"Player vs Player"}
+          buttonStyles={styles.button}
+          goToScreen={SCREEN_INFO.TWO_PLAYERS.name}
+        />
+        <FlatButton
+          label={"Play online"}
+          buttonStyles={styles.button}
+          goToScreen={SCREEN_INFO.MULTIPLAYER.name}
+        />
         <FlatButton label={"Score Board"} buttonStyles={styles.button} />
       </View>
       <View style={styles.footerContainer}>
         <SquareButton graphic={GRAPHICS.ICONS.rateUs} />
         <SquareButton
           graphic={GRAPHICS.ICONS.faq}
-          navigateToScreen={SCREEN_INFO.FAQ.NAME}
+          goToScreen={SCREEN_INFO.FAQ.name}
         />
         <SquareButton graphic={GRAPHICS.ICONS.puzzle} />
         <SquareButton graphic={GRAPHICS.ICONS.translation} />
@@ -50,9 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
   },
-  buttonsContainer: {
-    // borderWidth: 1,
-  },
+  buttonsContainer: {},
   button: {
     margin: 8,
   },

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 /**Hooks */
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 
 /** Constants */
 import { SCREEN_INFO } from "../constants/ScreensInfo";
@@ -13,9 +13,10 @@ import LetterPress from "./LetterPress";
 import SquareButton from "./SquareButton";
 
 function CustomHeader() {
-  let title: string = useRoute().name;
+  const route = useRoute();
+  let title: string = route.name;
 
-  switch (useRoute().name) {
+  switch (title) {
     case SCREEN_INFO.HOME.name: {
       title = SCREEN_INFO.HOME.title;
       break;
@@ -28,8 +29,23 @@ function CustomHeader() {
       title = SCREEN_INFO.SETTINGS.title;
       break;
     }
+    case SCREEN_INFO.ONE_PLAYER.name: {
+      title = SCREEN_INFO.ONE_PLAYER.title;
+      break;
+    }
+    case SCREEN_INFO.TWO_PLAYERS.name: {
+      title = SCREEN_INFO.TWO_PLAYERS.title;
+      break;
+    }
+    case SCREEN_INFO.MULTIPLAYER.name: {
+      title = SCREEN_INFO.MULTIPLAYER.title;
+      break;
+    }
+    case SCREEN_INFO.FAQ.name: {
+      title = SCREEN_INFO.FAQ.title;
+      break;
+    }
     default: {
-      title = useRoute().name;
       break;
     }
   }
@@ -39,27 +55,31 @@ function CustomHeader() {
       return (
         <SquareButton
           graphic={GRAPHICS.ICONS.user}
-          navigateTo={SCREEN_INFO.PROFILE.name}
+          goToScreen={SCREEN_INFO.PROFILE.name}
         />
       );
     }
   }
 
   function setRightIcon() {
-    if (title === SCREEN_INFO.HOME.title) {
-      return (
-        <SquareButton
-          graphic={GRAPHICS.ICONS.settings}
-          navigateTo={SCREEN_INFO.SETTINGS.name}
-        />
-      );
-    }
-
-    if (
-      title === SCREEN_INFO.PROFILE.title ||
-      title === SCREEN_INFO.SETTINGS.title
-    ) {
-      return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+    switch (title) {
+      case SCREEN_INFO.HOME.title: {
+        return (
+          <SquareButton
+            graphic={GRAPHICS.ICONS.settings}
+            goToScreen={SCREEN_INFO.SETTINGS.name}
+          />
+        );
+      }
+      case SCREEN_INFO.PROFILE.title: {
+        return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+      }
+      case SCREEN_INFO.SETTINGS.title: {
+        return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+      }
+      default: {
+        return <SquareButton graphic={GRAPHICS.ICONS.empty} />;
+      }
     }
   }
 

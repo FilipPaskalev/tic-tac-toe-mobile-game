@@ -1,15 +1,6 @@
 import React from "react";
-import { NavigationContainer, useRoute } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
-/** Screens */
-import HomeScreen from "../screens/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import SettingsScreen from "../screens/SettingsScreen";
-import FaqScreen from "../screens/FaqScreen";
-import OnePlayerScreen from "../screens/OnePlayerScreen";
-import TwoPlayersScreen from "../screens/TwoPlayersScreen";
-import MultiplayerScreen from "../screens/MultiplayerScreen";
 
 /** Constants */
 import { SCREEN_INFO } from "../constants/ScreensInfo";
@@ -28,33 +19,45 @@ function MainNavigation() {
           headerTitle: () => <CustomHeader />,
         }}
       >
-        {/* prettier-ignore */}
-        <MainStack.Screen 
-          name={SCREEN_INFO.HOME.name} 
-          component={HomeScreen} />
         <MainStack.Screen
-          name={SCREEN_INFO.PROFILE.name}
-          component={ProfileScreen}
+          name={SCREEN_INFO.HOME.name}
+          component={SCREEN_INFO.HOME.component}
+          options={{ title: SCREEN_INFO.HOME.title }}
         />
         <MainStack.Screen
           name={SCREEN_INFO.SETTINGS.name}
-          component={SettingsScreen}
+          component={SCREEN_INFO.SETTINGS.component}
+          options={{ title: SCREEN_INFO.SETTINGS.title }}
         />
-        {/* prettier-ignore */}
-        <MainStack.Screen 
-          name={SCREEN_INFO.FAQ.name} 
-          component={FaqScreen} />
+        <MainStack.Screen
+          name={SCREEN_INFO.PROFILE.name}
+          component={SCREEN_INFO.PROFILE.component}
+          options={{ title: SCREEN_INFO.PROFILE.title }}
+        />
+        <MainStack.Screen
+          name={SCREEN_INFO.FAQ.name}
+          component={SCREEN_INFO.FAQ.component}
+          options={{ title: SCREEN_INFO.FAQ.title }}
+        />
         <MainStack.Screen
           name={SCREEN_INFO.ONE_PLAYER.name}
-          component={OnePlayerScreen}
+          component={SCREEN_INFO.ONE_PLAYER.component}
+          options={{ title: SCREEN_INFO.ONE_PLAYER.title }}
         />
         <MainStack.Screen
           name={SCREEN_INFO.TWO_PLAYERS.name}
-          component={TwoPlayersScreen}
+          component={SCREEN_INFO.TWO_PLAYERS.component}
+          options={{ title: SCREEN_INFO.TWO_PLAYERS.title }}
         />
         <MainStack.Screen
           name={SCREEN_INFO.MULTIPLAYER.name}
-          component={MultiplayerScreen}
+          component={SCREEN_INFO.MULTIPLAYER.component}
+          options={{ title: SCREEN_INFO.MULTIPLAYER.title }}
+        />
+        <MainStack.Screen
+          name={SCREEN_INFO.SCORE_BOARD.name}
+          component={SCREEN_INFO.SCORE_BOARD.component}
+          options={{ title: SCREEN_INFO.SCORE_BOARD.title }}
         />
       </MainStack.Navigator>
     </NavigationContainer>

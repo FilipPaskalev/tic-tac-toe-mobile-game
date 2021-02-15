@@ -12,30 +12,20 @@ interface SquareButtonProps {
   iconStyles?: object;
   containerStyles?: object;
   graphic?: object;
-  navigateTo?: string;
-  action?: string;
-}
-
-function actions(action?: string) {
-  return null;
+  goToScreen?: string;
 }
 
 function SquareButton({
   graphic,
   iconStyles,
   containerStyles,
-  navigateTo,
-  action,
+  goToScreen,
 }: SquareButtonProps) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[styles.container, containerStyles]}
-      onPress={() =>
-        navigateTo && navigateTo
-          ? navigation.navigate(navigateTo)
-          : actions(action)
-      }
+      onPress={() => goToScreen && navigation.navigate(goToScreen)}
     >
       <Image
         source={graphic && graphic ? graphic : GRAPHICS.ICONS.empty}
