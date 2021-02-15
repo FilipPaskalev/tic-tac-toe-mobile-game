@@ -36,7 +36,11 @@ function HomeScreen() {
           buttonStyles={styles.button}
           goToScreen={SCREEN_INFO.MULTIPLAYER.name}
         />
-        <FlatButton label={"Score Board"} buttonStyles={styles.button} />
+        <FlatButton
+          label={"Score Board"}
+          buttonStyles={styles.button}
+          goToScreen={SCREEN_INFO.SCORE_BOARD.name}
+        />
       </View>
       <View style={styles.footerContainer}>
         <SquareButton graphic={GRAPHICS.ICONS.rateUs} />
