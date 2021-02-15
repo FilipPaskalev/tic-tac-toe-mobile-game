@@ -3,7 +3,7 @@ import { useFonts } from "expo-font";
 import { StyleSheet, View, Text } from "react-native";
 
 type LetterPressProps = {
-  content: string;
+  content?: string;
   textStyles?: object;
   containerStyles?: object;
 };
