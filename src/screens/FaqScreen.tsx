@@ -1,22 +1,45 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, FlatList, SafeAreaView, View, Text } from "react-native";
+
+/**Hooks */
+import { useHeaderHeight } from "@react-navigation/stack";
+
+/** Custom components */
+import SquareButton from "../components/SquareButton";
+
+/** Constants */
+import { GRAPHICS } from "../constants/Graphics";
+import { COLORS } from "../constants/Colors";
+const FAQ_MOCK_DATA = [
+  {
+    question: "Question 1",
+    answer: "Answer 1",
+  },
+  {
+    question: "Question 2",
+    answer: "Answer 2",
+  },
+  {
+    question: "Question 3",
+    answer: "Answer 3",
+  },
+];
 
 function FaqScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <SafeAreaView style={[styles.screen, { paddingTop: useHeaderHeight() }]}>
       <StatusBar style="auto" />
-    </View>
+      <SquareButton graphic={GRAPHICS.ICONS.arrow} />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 16,
+    backgroundColor: COLORS.BACKGROUND.APP.primary,
   },
 });
 
