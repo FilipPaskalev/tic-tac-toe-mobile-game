@@ -3,13 +3,13 @@ import { useFonts } from "expo-font";
 import { StyleSheet, View, Text } from "react-native";
 
 type LetterPressProps = {
-  context: string;
+  content: string;
   setFontSize?: number;
   containerStyles?: object;
 };
 
 function LetterPress({
-  context,
+  content,
   setFontSize,
   containerStyles,
 }: LetterPressProps) {
@@ -23,7 +23,7 @@ function LetterPress({
 
   return (
     <View style={[styles.container, containerStyles]}>
-      <Text style={[styles.text, { fontSize: setFontSize }]}>{context}</Text>
+      <Text style={[styles.text, { fontSize: setFontSize }]}>{content}</Text>
     </View>
   );
 }
