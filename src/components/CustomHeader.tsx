@@ -1,55 +1,73 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
+/**Hooks */
+import { useNavigation, useRoute } from "@react-navigation/native";
+
 /** Constants */
 import { SCREEN_INFO } from "../constants/ScreensInfo";
 import { GRAPHICS } from "../constants/Graphics";
 
-/** Components */
+/** Custom components */
 import LetterPress from "./LetterPress";
 import SquareButton from "./SquareButton";
 
-function setLeftIcon(title: string) {
-  if (title === SCREEN_INFO.HOME.TITLE) {
-    return (
-      <SquareButton
-        navigateToScreen={SCREEN_INFO.PROFILE.NAME}
-        graphic={GRAPHICS.ICONS.user}
-      />
-    );
-  }
-}
+function CustomHeader() {
+  let title: string = useRoute().name;
 
-function setRightIcon(title: string) {
-  if (title === SCREEN_INFO.HOME.TITLE) {
-    return (
-      <SquareButton
-        navigateToScreen={SCREEN_INFO.SETTINGS.NAME}
-        graphic={GRAPHICS.ICONS.settings}
-      />
-    );
+  switch (useRoute().name) {
+    case SCREEN_INFO.HOME.name: {
+      title = SCREEN_INFO.HOME.title;
+      break;
+    }
+    case SCREEN_INFO.PROFILE.name: {
+      title = SCREEN_INFO.PROFILE.title;
+      break;
+    }
+    case SCREEN_INFO.SETTINGS.name: {
+      title = SCREEN_INFO.SETTINGS.title;
+      break;
+    }
+    default: {
+      title = useRoute().name;
+      break;
+    }
   }
-  // prettier-ignore
-  if (title === SCREEN_INFO.PROFILE.TITLE || title === SCREEN_INFO.SETTINGS.TITLE) {
-    return (
-      <SquareButton
-        navigateToScreen={SCREEN_INFO.SETTINGS.NAME}
-        graphic={GRAPHICS.ICONS.save}
-      />
-    );
+
+  function setLeftIcon() {
+    if (title === SCREEN_INFO.HOME.title) {
+      return (
+        <SquareButton
+          graphic={GRAPHICS.ICONS.user}
+          navigateTo={SCREEN_INFO.PROFILE.name}
+        />
+      );
+    }
   }
-}
 
-interface CustomHeaderProps {
-  title: string;
-}
+  function setRightIcon() {
+    if (title === SCREEN_INFO.HOME.title) {
+      return (
+        <SquareButton
+          graphic={GRAPHICS.ICONS.settings}
+          navigateTo={SCREEN_INFO.SETTINGS.name}
+        />
+      );
+    }
 
-function CustomHeader({ title }: CustomHeaderProps) {
+    if (
+      title === SCREEN_INFO.PROFILE.title ||
+      title === SCREEN_INFO.SETTINGS.title
+    ) {
+      return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+    }
+  }
+
   return (
     <View style={styles.container}>
-      {setLeftIcon(title)}
-      <LetterPress context={title} setFontSize={28} />
-      {setRightIcon(title)}
+      {setLeftIcon()}
+      <LetterPress content={title} textStyles={styles.headerStyles} />
+      {setRightIcon()}
     </View>
   );
 }
@@ -60,7 +78,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    fontSize: 30,
+  },
+  headerStyles: {
+    fontSize: 26,
   },
 });
 
