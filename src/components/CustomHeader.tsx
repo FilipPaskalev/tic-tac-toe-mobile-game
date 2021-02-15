@@ -9,47 +9,49 @@ import { GRAPHICS } from "../constants/Graphics";
 import LetterPress from "./LetterPress";
 import SquareButton from "./SquareButton";
 
-type CustomHeaderProps = {
+function setLeftIcon(title: string) {
+  if (title === SCREEN_INFO.HOME.TITLE) {
+    return (
+      <SquareButton
+        navigateToScreen={SCREEN_INFO.PROFILE.NAME}
+        graphic={GRAPHICS.ICONS.user}
+      />
+    );
+  }
+}
+
+function setRightIcon(title: string) {
+  if (title === SCREEN_INFO.HOME.TITLE) {
+    return (
+      <SquareButton
+        navigateToScreen={SCREEN_INFO.SETTINGS.NAME}
+        graphic={GRAPHICS.ICONS.settings}
+      />
+    );
+  }
+  // prettier-ignore
+  if (title === SCREEN_INFO.PROFILE.TITLE || title === SCREEN_INFO.SETTINGS.TITLE) {
+    return (
+      <SquareButton
+        navigateToScreen={SCREEN_INFO.SETTINGS.NAME}
+        graphic={GRAPHICS.ICONS.save}
+      />
+    );
+  }
+}
+
+interface CustomHeaderProps {
   title: string;
-};
+}
 
 function CustomHeader({ title }: CustomHeaderProps) {
-  switch (title) {
-    case SCREEN_INFO.HOME.TITLE: {
-      return (
-        <View style={styles.container}>
-          <SquareButton
-            navigateToScreen={SCREEN_INFO.PROFILE.NAME}
-            graphic={GRAPHICS.ICONS.USER}
-          />
-          <LetterPress context={title} setFontSize={28} />
-          <SquareButton
-            navigateToScreen={SCREEN_INFO.SETTINGS.NAME}
-            graphic={GRAPHICS.ICONS.SETTINGS}
-          />
-        </View>
-      );
-    }
-    case SCREEN_INFO.SETTINGS.TITLE: {
-      return (
-        <View style={styles.container}>
-          <LetterPress context={title} setFontSize={28} />
-          <SquareButton graphic={GRAPHICS.ICONS.SAVE} />
-        </View>
-      );
-    }
-    case SCREEN_INFO.PROFILE.TITLE: {
-      return (
-        <View style={styles.container}>
-          <LetterPress context={title} setFontSize={28} />
-          <SquareButton graphic={GRAPHICS.ICONS.SAVE} />
-        </View>
-      );
-    }
-    default: {
-      return <LetterPress context={title} setFontSize={28} />;
-    }
-  }
+  return (
+    <View style={styles.container}>
+      {setLeftIcon(title)}
+      <LetterPress context={title} setFontSize={28} />
+      {setRightIcon(title)}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -58,7 +60,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderWidth: 1,
     fontSize: 30,
   },
 });
