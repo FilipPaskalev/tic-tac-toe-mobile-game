@@ -1,13 +1,14 @@
 export const GRAPHICS = {
   ICONS: {
-    USER: require("../../assets/icons/user.png"),
-    SETTINGS: require("../../assets/icons/settings.png"),
-    SAVE: require("../../assets/icons/save.png"),
-    RATE_US: require("../../assets/icons/star.png"),
-    FAQ: require("../../assets/icons/faq.png"),
-    EMPTY: require("../../assets/icons/empty.png"),
+    user: require("../../assets/icons/user.png"),
+    settings: require("../../assets/icons/settings.png"),
+    save: require("../../assets/icons/save.png"),
+    rateUs: require("../../assets/icons/rateUs.png"),
+    faq: require("../../assets/icons/faq.png"),
+    empty: require("../../assets/icons/empty.png"),
+    puzzle: require("../../assets/icons/moreGames.png"),
   },
   IMAGES: {
-    LOGO: require("../../assets/images/logo.png"),
+    logo: require("../../assets/images/logo.png"),
   },
 };
