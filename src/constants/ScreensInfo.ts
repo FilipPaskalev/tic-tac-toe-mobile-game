@@ -42,35 +42,3 @@ export const SCREEN_INFO = {
     component: ScoreBoardScreen,
   },
 };
-
-export function getScreenTitle(screenName: string) {
-  switch (screenName) {
-    case SCREEN_INFO.HOME.name: {
-      return SCREEN_INFO.HOME.title;
-    }
-    case SCREEN_INFO.PROFILE.name: {
-      return SCREEN_INFO.PROFILE.title;
-    }
-    case SCREEN_INFO.SETTINGS.name: {
-      return SCREEN_INFO.SETTINGS.title;
-    }
-    case SCREEN_INFO.ONE_PLAYER.name: {
-      return SCREEN_INFO.ONE_PLAYER.title;
-    }
-    case SCREEN_INFO.TWO_PLAYERS.name: {
-      return SCREEN_INFO.TWO_PLAYERS.title;
-    }
-    case SCREEN_INFO.MULTIPLAYER.name: {
-      return SCREEN_INFO.MULTIPLAYER.title;
-    }
-    case SCREEN_INFO.FAQ.name: {
-      return SCREEN_INFO.FAQ.title;
-    }
-    case SCREEN_INFO.SCORE_BOARD.name: {
-      return SCREEN_INFO.SCORE_BOARD.title;
-    }
-    default: {
-      break;
-    }
-  }
-}
