@@ -10,6 +10,7 @@ export const GRAPHICS = {
     exit: require("../../assets/icons/exit.png"),
     translation: require("../../assets/icons/translation.png"),
     arrow: require("../../assets/icons/arrow.png"),
+    information: require("../../assets/icons/information.png"),
   },
   IMAGES: {
     logo: require("../../assets/images/logo.png"),

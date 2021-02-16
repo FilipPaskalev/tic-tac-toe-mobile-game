@@ -8,11 +8,12 @@ import { useHeaderHeight } from "@react-navigation/stack";
 /** Constants */
 import { GRAPHICS } from "../constants/Graphics";
 import { COLORS } from "../constants/Colors";
+import { SCREEN_INFO } from "../constants/ScreensInfo";
 
 /** Custom components */
 import FlatButton from "../components/FlatButton";
 import SquareButton from "../components/SquareButton";
-import { SCREEN_INFO } from "../constants/ScreensInfo";
+import Footer from "../components/Footer";
 
 function HomeScreen() {
   const headerHeight = useHeaderHeight();
@@ -42,7 +43,7 @@ function HomeScreen() {
           goToScreen={SCREEN_INFO.SCORE_BOARD.name}
         />
       </View>
-      <View style={styles.footerContainer}>
+      {/* <View style={styles.footerContainer}>
         <SquareButton graphic={GRAPHICS.ICONS.rateUs} />
         <SquareButton
           graphic={GRAPHICS.ICONS.faq}
@@ -51,7 +52,8 @@ function HomeScreen() {
         <SquareButton graphic={GRAPHICS.ICONS.puzzle} />
         <SquareButton graphic={GRAPHICS.ICONS.translation} />
         <SquareButton graphic={GRAPHICS.ICONS.exit} />
-      </View>
+      </View> */}
+      <Footer />
     </View>
   );
 }
@@ -70,10 +72,6 @@ const styles = StyleSheet.create({
   buttonsContainer: {},
   button: {
     margin: 8,
-  },
-  footerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
 });
 
