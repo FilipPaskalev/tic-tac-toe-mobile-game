@@ -1,66 +1,55 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-/**Hooks */
-import { useRoute } from "@react-navigation/native";
-
 /** Constants */
-import { SCREEN_INFO } from "../constants/ScreensInfo";
 import { GRAPHICS } from "../constants/Graphics";
+import { useRoute } from "@react-navigation/native";
 
 /** Custom components */
 import LetterPress from "./LetterPress";
 import SquareButton from "./SquareButton";
 
-function CustomHeader() {
-  const route = useRoute();
-  let title: string = route.name;
+/** Enumerations & constants */
+import { SCREEN_NAMES } from "../constants/ScreenNames";
 
-  for (let screen of Object.values(SCREEN_INFO)) {
-    if (screen.name === route.name) {
-      title = screen.title;
-      break;
-    }
-  }
-
-  function setLeftIcon() {
-    if (title === SCREEN_INFO.HOME.title) {
+function setRightIcon(routeName: string) {
+  switch (routeName) {
+    case SCREEN_NAMES.home: {
       return (
         <SquareButton
-          graphic={GRAPHICS.ICONS.user}
-          goToScreen={SCREEN_INFO.PROFILE.name}
+          graphic={GRAPHICS.ICONS.settings}
+          goToScreen={SCREEN_NAMES.settings}
         />
       );
     }
-  }
-
-  function setRightIcon() {
-    switch (title) {
-      case SCREEN_INFO.HOME.title: {
-        return (
-          <SquareButton
-            graphic={GRAPHICS.ICONS.settings}
-            goToScreen={SCREEN_INFO.SETTINGS.name}
-          />
-        );
-      }
-      case SCREEN_INFO.PROFILE.title: {
-        return <SquareButton graphic={GRAPHICS.ICONS.save} />;
-      }
-      case SCREEN_INFO.SETTINGS.title: {
-        return <SquareButton graphic={GRAPHICS.ICONS.save} />;
-      }
-      default: {
-        return <SquareButton graphic={GRAPHICS.ICONS.empty} />;
-      }
+    case SCREEN_NAMES.settings: {
+      return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+    }
+    case SCREEN_NAMES.profile: {
+      return <SquareButton graphic={GRAPHICS.ICONS.save} />;
+    }
+    default: {
+      return <SquareButton graphic={GRAPHICS.ICONS.empty} />;
     }
   }
+}
 
+interface CustomHeaderProps {
+  title: string;
+}
+
+function CustomHeader({ title }: CustomHeaderProps) {
+  const route = useRoute();
   return (
     <View style={styles.container}>
-      {setLeftIcon()}
+      {route.name === SCREEN_NAMES.home && (
+        <SquareButton
+          graphic={GRAPHICS.ICONS.user}
+          goToScreen={SCREEN_NAMES.profile}
+        />
+      )}
       <LetterPress content={title} textStyles={styles.headerStyles} />
-      {setRightIcon()}
+      {setRightIcon(route.name)}
     </View>
   );
 }

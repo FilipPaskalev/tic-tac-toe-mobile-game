@@ -1,0 +1,18 @@
+{
+  "playedTime": {
+    "years": 0,
+    "months": 0,
+    "days": 0,
+    "hours": 0,
+    "minutes": 0,
+    "seconds": 0
+  },
+  "totalPlayedGames": 0,
+  "totalWins": 0,
+  "totalLoses": 0,
+  "xWins": 0,
+  "xLoses": 0,
+  "oWins": 0,
+  "oLoses": 0,
+  "draftGames": 0
+}

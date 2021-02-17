@@ -8,7 +8,6 @@ import { useHeaderHeight } from "@react-navigation/stack";
 /** Constants */
 import { GRAPHICS } from "../constants/Graphics";
 import { COLORS } from "../constants/Colors";
-import { SCREEN_INFO } from "../constants/ScreensInfo";
 
 /** Custom components */
 import FlatButton from "../components/FlatButton";
@@ -21,7 +20,7 @@ function HomeScreen() {
     <View style={[styles.screen, { paddingTop: headerHeight }]}>
       <StatusBar style="auto" />
       <Image source={GRAPHICS.IMAGES.logo} style={styles.logoContainer} />
-      <View style={styles.buttonsContainer}>
+      {/* <View style={styles.buttonsContainer}>
         <FlatButton
           label={"Player vs AI"}
           buttonStyles={styles.button}
@@ -42,7 +41,7 @@ function HomeScreen() {
           buttonStyles={styles.button}
           goToScreen={SCREEN_INFO.SCORE_BOARD.name}
         />
-      </View>
+      </View> */}
       {/* <View style={styles.footerContainer}>
         <SquareButton graphic={GRAPHICS.ICONS.rateUs} />
         <SquareButton
@@ -53,7 +52,7 @@ function HomeScreen() {
         <SquareButton graphic={GRAPHICS.ICONS.translation} />
         <SquareButton graphic={GRAPHICS.ICONS.exit} />
       </View> */}
-      <Footer />
+      {/* <Footer /> */}
     </View>
   );
 }

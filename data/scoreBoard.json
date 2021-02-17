@@ -1,0 +1,19 @@
+[
+  {
+    "id": 0,
+    "date": "01-01-2000",
+    "playedTime": {
+      "years": 0,
+      "months": 0,
+      "days": 0,
+      "hours": 0,
+      "minutes": 0,
+      "seconds": 0
+    },
+    "score": {
+      "xWin": false,
+      "oWin": false,
+      "draft": false
+    }
+  }
+]

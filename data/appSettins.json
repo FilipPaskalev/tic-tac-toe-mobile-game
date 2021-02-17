@@ -1,0 +1,10 @@
+{
+  "isMusicActive": true,
+  "isVibrationActive": true,
+  "isSoundsActive": true,
+  "isAdsActive": true,
+  "isWelcomeScreenActive": true,
+  "language": "en",
+  "difficulty": "normal",
+  "theme": "default"
+}
