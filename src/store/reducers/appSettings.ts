@@ -3,10 +3,11 @@ const initialState = {
   isVibrationON: true,
   isSoundsOn: true,
   isAdsON: true,
+  selectedLanguage: "en",
 };
 
-const settingsReducer = (state = initialState, action) => {
+const appSettingsReducer = (state = initialState, action: any) => {
   return state;
 };
 
-export default settingsReducer;
+export default appSettingsReducer;
