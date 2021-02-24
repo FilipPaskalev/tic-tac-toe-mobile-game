@@ -6,5 +6,17 @@
   "singlePlayer": "един играч",
   "multiplayer": "двама играчи",
   "playOnline": "играй онлайн",
-  "score": "рекорди"
+  "score": "рекорди",
+  "language": "език",
+  "english": "английски",
+  "bulgarian": "български",
+  "difficultyLevel": "ниво на трудност",
+  "easy": "лесно",
+  "normal": "нормално",
+  "hard": "трудно",
+  "theme": "тема",
+  "pink": "розова",
+  "green": "зелена",
+  "update": "обнови",
+  "reset": "начални"
 }
