@@ -9,7 +9,6 @@ import { GLOBAL_STYLES } from "../constants/styles";
 
 /** Enumerations */
 import { BUTTON_ACTIONS } from "../constants/ButtonActions";
-import { I18N_KEYS } from "../constants/I18nKeys";
 import { MARGIN } from "../constants/styles/Margin";
 import { SCREE_NAMES } from "../constants/ScreenNames";
 

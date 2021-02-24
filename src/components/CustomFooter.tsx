@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { useRoute } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
 
 /** Constants */
@@ -8,20 +9,33 @@ import { GLOBAL_STYLES } from "../constants/styles";
 
 /** Components */
 import RoundButton from "./buttons/RoundButton";
+import { SCREE_NAMES } from "../constants/ScreenNames";
 
 type Props = {
   style?: object;
 };
 
 const CustomFooter: FunctionComponent<Props> = (props) => {
-  return (
-    <View style={[styles.container, props.style]}>
-      <RoundButton source={GRAPHICS.ICONS.SHARE} />
-      <RoundButton source={GRAPHICS.ICONS.STORE} />
-      <RoundButton source={GRAPHICS.ICONS.LIKE_US} />
-      <RoundButton source={GRAPHICS.ICONS.QUESTION} />
-    </View>
-  );
+  const screenName = useRoute().name;
+  if(screenName === SCREE_NAMES.HOME) {
+    return (
+      <View style={[styles.container, props.style]}>
+        <RoundButton source={GRAPHICS.ICONS.SHARE} />
+        <RoundButton source={GRAPHICS.ICONS.STORE} />
+        <RoundButton source={GRAPHICS.ICONS.LIKE_US} />
+        <RoundButton source={GRAPHICS.ICONS.QUESTION} />
+      </View>
+    );
+  } else {
+    return (
+      <View style={[styles.container, props.style]}>
+        <RoundButton source={GRAPHICS.ICONS.} />
+        <RoundButton source={GRAPHICS.ICONS.STORE} />
+        <RoundButton source={GRAPHICS.ICONS.LIKE_US} />
+      </View>
+    );
+  }
+
 };
 
 const styles = StyleSheet.create({
