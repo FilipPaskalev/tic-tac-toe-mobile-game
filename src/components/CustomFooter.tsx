@@ -17,7 +17,7 @@ type Props = {
 
 const CustomFooter: FunctionComponent<Props> = (props) => {
   const screenName = useRoute().name;
-  if(screenName === SCREE_NAMES.HOME) {
+  if (screenName === SCREE_NAMES.HOME) {
     return (
       <View style={[styles.container, props.style]}>
         <RoundButton source={GRAPHICS.ICONS.SHARE} />
@@ -29,13 +29,12 @@ const CustomFooter: FunctionComponent<Props> = (props) => {
   } else {
     return (
       <View style={[styles.container, props.style]}>
-        <RoundButton source={GRAPHICS.ICONS.} />
-        <RoundButton source={GRAPHICS.ICONS.STORE} />
-        <RoundButton source={GRAPHICS.ICONS.LIKE_US} />
+        <RoundButton source={GRAPHICS.ICONS.NO_SOUND} />
+        <RoundButton source={GRAPHICS.ICONS.MUSIC_NOTES} />
+        <RoundButton source={GRAPHICS.ICONS.QUESTION} />
       </View>
     );
   }
-
 };
 
 const styles = StyleSheet.create({
