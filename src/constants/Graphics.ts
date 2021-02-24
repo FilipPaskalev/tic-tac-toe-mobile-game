@@ -13,5 +13,8 @@ export const GRAPHICS = {
     STORE: require("../../assets/icons/037-store.png"),
     ARROW: require("../../assets/icons/arrow.png"),
     EMPTY: require("../../assets/icons/empty.png"),
+    MUSIC_NOTES: require("../../assets/icons/music-notes.png"),
+    VOLUME_UP: require("../../assets/icons/volume-up.png"),
+    NO_SOUND: require("../../assets/icons/no-sound.png"),
   },
 };
