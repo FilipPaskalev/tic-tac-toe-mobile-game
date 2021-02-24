@@ -26,22 +26,22 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
       <View style={styles.main}>
         <View style={styles.navigationContainer}>
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_BTN}
+            source={GRAPHICS.BUTTONS.FLAT}
             label={i18n.t(I18N_KEYS.singlePlayer)}
             style={styles.button}
           />
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_BTN}
+            source={GRAPHICS.BUTTONS.FLAT}
             label={i18n.t(I18N_KEYS.multiplayer)}
             style={styles.button}
           />
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_BTN}
+            source={GRAPHICS.BUTTONS.FLAT}
             label={i18n.t(I18N_KEYS.playOnline)}
             style={styles.button}
           />
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_BTN}
+            source={GRAPHICS.BUTTONS.FLAT}
             label={i18n.t(I18N_KEYS.score)}
             style={styles.button}
           />
@@ -49,7 +49,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
         <View />
         <View style={styles.exitContainer}>
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_BTN}
+            source={GRAPHICS.BUTTONS.FLAT}
             label={i18n.t(I18N_KEYS.exit)}
           />
         </View>

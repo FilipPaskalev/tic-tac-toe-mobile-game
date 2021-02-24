@@ -1,7 +1,7 @@
 export const GRAPHICS = {
   BUTTONS: {
-    ROUND_BTN: require("../../assets/buttons/b1.png"),
-    FLAT_BTN: require("../../assets/buttons/b2.png"),
+    ROUND: require("../../assets/buttons/b3.png"),
+    FLAT: require("../../assets/buttons/b2.png"),
     EMPTY: require("../../assets/icons/empty.png"),
   },
   ICONS: {

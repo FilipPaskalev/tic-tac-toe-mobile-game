@@ -48,10 +48,7 @@ const RoundButton: FunctionComponent<Props> = (props) => {
       style={props.style}
       onPress={() => props.action && actionExecuter(props.action)}
     >
-      <ImageBackground
-        source={GRAPHICS.BUTTONS.ROUND_BTN}
-        style={styles.button}
-      >
+      <ImageBackground source={GRAPHICS.BUTTONS.ROUND} style={styles.button}>
         {props.source && <Image source={props.source} style={styles.icon} />}
       </ImageBackground>
     </TouchableOpacity>
@@ -60,12 +57,12 @@ const RoundButton: FunctionComponent<Props> = (props) => {
 
 const styles = StyleSheet.create({
   button: {
-    ...SIZES.BTN_ROUND_L,
+    ...SIZES.BTN_ROUND_XL,
     justifyContent: "center",
     alignItems: "center",
   },
   icon: {
-    ...SIZES.ICON_L,
+    ...SIZES.ICON_M,
   },
 });
 
