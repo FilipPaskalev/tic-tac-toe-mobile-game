@@ -10,6 +10,7 @@
         "markdown",
         "latex",
         "plaintext",
-        "typescript"
+        "typescript",
+        "typescriptreact"
     ]
 }
