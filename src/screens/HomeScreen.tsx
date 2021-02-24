@@ -8,9 +8,11 @@ import CustomHeader from "../components/CustomHeader";
 import FlatButton from "../components/buttons/FlatButton";
 
 /** Constants */
-import { I18N_KEYS } from "../constants/I18nKeys";
 import { GLOBAL_STYLES } from "../constants/styles";
 import { GRAPHICS } from "../constants/Graphics";
+
+/** Enumerations */
+import { I18N_KEYS } from "../constants/I18nKeys";
 import { MARGIN } from "../constants/styles/Margin";
 import { PADDING } from "../constants/styles/Padding";
 
@@ -20,7 +22,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
   return (
     <View style={styles.screen}>
       <StatusBar hidden={true} />
-      <CustomHeader title={i18n.t(I18N_KEYS.homeScreenTitle)} />
+      <CustomHeader />
       <View style={styles.main}>
         <View style={styles.navigationContainer}>
           <FlatButton

@@ -4,9 +4,9 @@
  * will return translated content.
  */
 export enum I18N_KEYS {
-  homeScreenTitle = "homeScreenTitle",
-  profileScreenTitle = "profileScreenTitle",
-  settingsScreenTitle = "settingsScreenTitle",
+  home = "home",
+  profile = "profile",
+  settings = "settings",
   exit = "exit",
   singlePlayer = "singlePlayer",
   multiplayer = "multiplayer",

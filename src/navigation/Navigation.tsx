@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
+import { SCREE_NAMES } from "../constants/ScreenNames";
 
 const MainStack = createStackNavigator();
 
@@ -18,9 +19,15 @@ function Navigation() {
           headerShown: false,
         }}
       >
-        <MainStack.Screen name={"Home"} component={HomeScreen} />
-        <MainStack.Screen name={"Profile"} component={ProfileScreen} />
-        <MainStack.Screen name={"Settings"} component={SettingsScreen} />
+        <MainStack.Screen name={SCREE_NAMES.HOME} component={HomeScreen} />
+        <MainStack.Screen
+          name={SCREE_NAMES.PROFILE}
+          component={ProfileScreen}
+        />
+        <MainStack.Screen
+          name={SCREE_NAMES.SETTINGS}
+          component={SettingsScreen}
+        />
       </MainStack.Navigator>
     </NavigationContainer>
   );

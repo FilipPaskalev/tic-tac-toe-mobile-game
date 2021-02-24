@@ -1,7 +1,7 @@
 {
-  "homeScreenTitle": "начало",
-  "profileScreenTitle": "профил",
-  "settingsScreenTitle": "настройки",
+  "home": "начало",
+  "profile": "профил",
+  "settings": "настройки",
   "exit": "излез",
   "singlePlayer": "един играч",
   "multiplayer": "двама играчи",

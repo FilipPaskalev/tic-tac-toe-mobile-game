@@ -15,7 +15,7 @@ const ProfileScreen: FunctionComponent<Props> = (props) => {
   return (
     <View style={styles.screen}>
       <StatusBar hidden={true} />
-      <CustomHeader title={I18n.t(I18N_KEYS.profileScreenTitle)} />
+      <CustomHeader />
     </View>
   );
 };

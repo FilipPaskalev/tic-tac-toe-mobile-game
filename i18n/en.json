@@ -1,7 +1,7 @@
 {
-  "homeScreenTitle": "home",
-  "profileScreenTitle": "profile",
-  "settingsScreenTitle": "settings",
+  "home": "home",
+  "profile": "profile",
+  "settings": "settings",
   "exit": "exit",
   "singlePlayer": "single player",
   "multiplayer": "multiplayer",
