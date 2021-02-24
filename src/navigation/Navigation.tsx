@@ -12,10 +12,15 @@ const MainStack = createStackNavigator();
 function Navigation() {
   return (
     <NavigationContainer>
-      <MainStack.Navigator initialRouteName={"HomeScreen"}>
-        <MainStack.Screen name={"HomeScreen"} component={HomeScreen} />
-        <MainStack.Screen name={"ProfileScreen"} component={ProfileScreen} />
-        <MainStack.Screen name={"SettingsScreen"} component={SettingsScreen} />
+      <MainStack.Navigator
+        initialRouteName={"Home"}
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <MainStack.Screen name={"Home"} component={HomeScreen} />
+        <MainStack.Screen name={"Profile"} component={ProfileScreen} />
+        <MainStack.Screen name={"Settings"} component={SettingsScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

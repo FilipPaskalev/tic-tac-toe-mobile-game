@@ -1,0 +1,10 @@
+{
+  "homeScreenTitle": "home",
+  "profileScreenTitle": "profile",
+  "settingsScreenTitle": "settings",
+  "exit": "exit",
+  "singlePlayer": "single player",
+  "multiplayer": "multiplayer",
+  "playOnline": "play online",
+  "score": "score"
+}

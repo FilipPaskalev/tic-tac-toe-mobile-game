@@ -1,0 +1,5 @@
+export enum COLORS {
+  BG_PRIMARY = "#AFBE78",
+  BG_SECONDARY = "#C7D6AE",
+  BG_TERTIARY = "#D4E4BB",
+}
