@@ -8,3 +8,4 @@ react-navigation/native 5.9.3
 expo 40.0.0
 expo-status-bar 1.0.3
 react-native-svg@12.1.0
+react-native-localization => https://github.com/stefalda/ReactNativeLocalization

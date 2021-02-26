@@ -12,7 +12,7 @@ import appSettingsReducer from "./src/store/reducers/appSettings";
 import Navigation from "./src/navigation/Navigation";
 
 /** Constants */
-import { SUPPORTED_LANGUAGES } from "./src/constants/Languages";
+import { I18N_DICTIONARY } from "./src/constants/I18nDictionary";
 
 const rootReducer = combineReducers({
   appSettings: appSettingsReducer,
@@ -27,11 +27,13 @@ i18n.locale = Localization.locale;
 i18n.fallbacks = true;
 
 // Set the supported languages
-i18n.translations = SUPPORTED_LANGUAGES;
+i18n.translations = I18N_DICTIONARY;
 
 type Props = {};
 
 const App: FunctionComponent<Props> = (props) => {
+  console.log("============== App.tsx LOAD ==============");
+
   return (
     <Provider store={store}>
       <Navigation />

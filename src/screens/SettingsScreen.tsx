@@ -19,6 +19,7 @@ const SettingsScreen: FunctionComponent<Props> = (props) => {
     <View style={styles.screen}>
       <StatusBar hidden={true} />
       <CustomHeader />
+      <View style={styles.main}></View>
       <CustomFooter />
     </View>
   );
@@ -27,6 +28,10 @@ const SettingsScreen: FunctionComponent<Props> = (props) => {
 const styles = StyleSheet.create({
   screen: {
     ...GLOBAL_STYLES.screen,
+  },
+  main: {
+    flex: 1,
+    alignItems: "center",
   },
 });
 

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { View, StatusBar, StyleSheet } from "react-native";
-import i18n from "i18n-js";
+import I18n from "i18n-js";
 
 /** Components */
 import CustomFooter from "../components/CustomFooter";
@@ -12,13 +12,14 @@ import { GLOBAL_STYLES } from "../constants/styles";
 import { GRAPHICS } from "../constants/Graphics";
 
 /** Enumerations */
-import { I18N_KEYS } from "../constants/I18nKeys";
 import { MARGIN } from "../constants/styles/Margin";
 import { PADDING } from "../constants/styles/Padding";
+import { I18N_KEYS } from "../constants/I18nKeys";
 
 type Props = {};
 
 const HomeScreen: FunctionComponent<Props> = (props) => {
+  console.log("========== HomeScreen.tsx LOAD ===========");
   return (
     <View style={styles.screen}>
       <StatusBar hidden={true} />
@@ -27,22 +28,22 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
         <View style={styles.navigationContainer}>
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
-            label={i18n.t(I18N_KEYS.singlePlayer)}
+            label={I18n.t(I18N_KEYS.singlePlayer)}
             style={styles.button}
           />
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
-            label={i18n.t(I18N_KEYS.multiplayer)}
+            label={I18n.t(I18N_KEYS.multiplayer)}
             style={styles.button}
           />
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
-            label={i18n.t(I18N_KEYS.playOnline)}
+            label={I18n.t(I18N_KEYS.playOnline)}
             style={styles.button}
           />
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
-            label={i18n.t(I18N_KEYS.score)}
+            label={I18n.t(I18N_KEYS.score)}
             style={styles.button}
           />
         </View>
@@ -50,7 +51,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
         <View style={styles.exitContainer}>
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
-            label={i18n.t(I18N_KEYS.exit)}
+            label={I18n.t(I18N_KEYS.exit)}
           />
         </View>
       </View>
