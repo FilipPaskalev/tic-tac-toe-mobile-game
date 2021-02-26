@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
-        "agentorange"
+        "agentorange",
+        "akadylan",
+        "open"
     ],
     "spellright.language": [
         "bg",
@@ -9,7 +11,6 @@
     "spellright.documentTypes": [
         "markdown",
         "latex",
-        "plaintext",
-        "typescript"
+        "plaintext"
     ]
 }
