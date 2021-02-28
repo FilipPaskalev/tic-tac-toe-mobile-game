@@ -14,7 +14,7 @@ function Navigation() {
   return (
     <NavigationContainer>
       <MainStack.Navigator
-        initialRouteName={"Home"}
+        initialRouteName={SCREE_NAMES.SETTINGS}
         screenOptions={{
           headerShown: false,
         }}

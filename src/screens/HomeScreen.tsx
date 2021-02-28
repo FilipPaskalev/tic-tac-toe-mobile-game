@@ -15,6 +15,7 @@ import { GRAPHICS } from "../constants/Graphics";
 import { MARGIN } from "../constants/styles/Margin";
 import { PADDING } from "../constants/styles/Padding";
 import { I18N_KEYS } from "../constants/I18nKeys";
+import { SIZES } from "../constants/sizes";
 
 type Props = {};
 
@@ -24,7 +25,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
     <View style={styles.screen}>
       <StatusBar hidden={true} />
       <CustomHeader />
-      <View style={styles.main}>
+      <View style={styles.body}>
         <View style={styles.navigationContainer}>
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
@@ -52,6 +53,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
             label={I18n.t(I18N_KEYS.exit)}
+            style={styles.exitButton}
           />
         </View>
       </View>
@@ -64,20 +66,29 @@ const styles = StyleSheet.create({
   screen: {
     ...GLOBAL_STYLES.screen,
   },
-  main: {
+  body: {
+    // borderWidth: 1,
     flex: 1,
     alignItems: "center",
+    marginTop: MARGIN.M,
   },
   navigationContainer: {
+    // borderWidth: 1,
     flex: 6,
     justifyContent: "center",
   },
   exitContainer: {
+    // borderWidth: 1,
     justifyContent: "center",
     marginBottom: MARGIN.M,
   },
   button: {
-    paddingVertical: PADDING.M,
+    // borderWidth: 1,
+    ...SIZES.BTN_FLAT_M,
+    marginVertical: MARGIN.M,
+  },
+  exitButton: {
+    ...SIZES.BTN_FLAT_M,
   },
 });
 

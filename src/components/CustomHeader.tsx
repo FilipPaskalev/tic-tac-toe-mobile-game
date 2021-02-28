@@ -28,7 +28,7 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
       case SCREE_NAMES.HOME: {
         return (
           <RoundButton
-            source={GRAPHICS.ICONS.SETTINGS}
+            // source={GRAPHICS.ICONS.SETTINGS}
             action={BUTTON_ACTIONS.NAVIGATE_TO_SETTINGS_SCREEN}
           />
         );
@@ -44,7 +44,7 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
       case SCREE_NAMES.HOME: {
         return (
           <RoundButton
-            source={GRAPHICS.ICONS.AVATAR}
+            // source={GRAPHICS.ICONS.AVATAR}
             action={BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN}
           />
         );
@@ -52,7 +52,7 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
       case SCREE_NAMES.SETTINGS: {
         return (
           <RoundButton
-            source={GRAPHICS.ICONS.ARROW}
+            // source={GRAPHICS.ICONS.ARROW}
             action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN}
           />
         );
@@ -60,7 +60,7 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
       case SCREE_NAMES.PROFILE: {
         return (
           <RoundButton
-            source={GRAPHICS.ICONS.ARROW}
+            // source={GRAPHICS.ICONS.ARROW}
             action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN}
           />
         );

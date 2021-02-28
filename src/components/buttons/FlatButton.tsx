@@ -39,7 +39,8 @@ const FlatButton: FunctionComponent<Props> = (props) => {
 
 const styles = StyleSheet.create({
   image: {
-    ...SIZES.BTN_FLAT_M,
+    width: "100%",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
