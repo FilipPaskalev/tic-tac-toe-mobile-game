@@ -20,10 +20,10 @@ type Props = {
   action?: BUTTON_ACTIONS;
 };
 
-function getGraphic(actionType?: BUTTON_ACTIONS) {
+function getIconGraphic(actionType?: BUTTON_ACTIONS) {
   switch (actionType) {
     case BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN: {
-      return GRAPHICS.ICONS.ARROW;
+      return GRAPHICS.ICONS.BACK_SCREEN_ARROW;
     }
     case BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN: {
       return GRAPHICS.ICONS.AVATAR;
@@ -34,17 +34,29 @@ function getGraphic(actionType?: BUTTON_ACTIONS) {
     case BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN: {
       return GRAPHICS.ICONS.QUESTION;
     }
-    case BUTTON_ACTIONS.OPEN_GOOGLE_STORE: {
+    case BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE: {
       return GRAPHICS.ICONS.STORE;
     }
     case BUTTON_ACTIONS.RATE_APP: {
       return GRAPHICS.ICONS.LIKE_US;
     }
     case BUTTON_ACTIONS.TOGGLE_MUSIC: {
-      return GRAPHICS.ICONS.MUSIC_NOTES;
+      return GRAPHICS.ICONS.MUSIC_ON;
     }
-    case BUTTON_ACTIONS.TOGGLE_SOUNDS: {
-      return GRAPHICS.ICONS.NO_SOUND;
+    case BUTTON_ACTIONS.MUSIC_ON: {
+      return GRAPHICS.ICONS.MUSIC_ON;
+    }
+    case BUTTON_ACTIONS.MUSIC_OFF: {
+      return GRAPHICS.ICONS.MUSIC_OFF;
+    }
+    case BUTTON_ACTIONS.SOUNDS_ON: {
+      return GRAPHICS.ICONS.SOUNDS_ON;
+    }
+    case BUTTON_ACTIONS.SOUNDS_OFF: {
+      return GRAPHICS.ICONS.SOUNDS_OFF;
+    }
+    case BUTTON_ACTIONS.TOGGLE_SOUND: {
+      return GRAPHICS.ICONS.SOUNDS_ON;
     }
     case BUTTON_ACTIONS.OPEN_SHARE_MODAL: {
       return GRAPHICS.ICONS.SHARE;
@@ -57,7 +69,9 @@ function getGraphic(actionType?: BUTTON_ACTIONS) {
 
 const RoundButton: FunctionComponent<Props> = (props) => {
   const navigation = useNavigation();
-  const icon = getGraphic(props.action);
+  const [icon, setIcon] = useState(getIconGraphic(props.action));
+  const [soundState, setSoundState] = useState(BUTTON_ACTIONS.SOUNDS_OFF);
+  const [musicState, setMusicState] = useState(BUTTON_ACTIONS.MUSIC_OFF);
 
   const actionExecuter = (actionType: BUTTON_ACTIONS) => {
     switch (actionType) {
@@ -74,27 +88,30 @@ const RoundButton: FunctionComponent<Props> = (props) => {
         break;
       }
       case BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN: {
-        navigation.navigate(SCREE_NAMES.FAQ);
+        // navigation.navigate(SCREE_NAMES.FAQ);
         break;
       }
-      case BUTTON_ACTIONS.OPEN_GOOGLE_STORE: {
-        navigation.navigate(SCREE_NAMES.FAQ);
+      case BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE: {
         break;
       }
       case BUTTON_ACTIONS.RATE_APP: {
-        navigation.navigate(SCREE_NAMES.FAQ);
         break;
       }
       case BUTTON_ACTIONS.TOGGLE_MUSIC: {
-        navigation.navigate(SCREE_NAMES.FAQ);
+        musicState === BUTTON_ACTIONS.MUSIC_ON
+          ? setMusicState(BUTTON_ACTIONS.MUSIC_OFF)
+          : setMusicState(BUTTON_ACTIONS.MUSIC_ON);
+        setIcon(getIconGraphic(musicState));
         break;
       }
-      case BUTTON_ACTIONS.TOGGLE_SOUNDS: {
-        navigation.navigate(SCREE_NAMES.FAQ);
+      case BUTTON_ACTIONS.TOGGLE_SOUND: {
+        soundState === BUTTON_ACTIONS.SOUNDS_ON
+          ? setSoundState(BUTTON_ACTIONS.SOUNDS_OFF)
+          : setSoundState(BUTTON_ACTIONS.SOUNDS_ON);
+        setIcon(getIconGraphic(soundState));
         break;
       }
-      case BUTTON_ACTIONS.TOGGLE_SOUNDS: {
-        navigation.navigate(SCREE_NAMES.FAQ);
+      case BUTTON_ACTIONS.OPEN_SHARE_MODAL: {
         break;
       }
       default: {

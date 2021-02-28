@@ -27,7 +27,7 @@ const CustomFooter: FunctionComponent<Props> = (props) => {
         />
         <RoundButton
           // source={GRAPHICS.ICONS.STORE}
-          action={BUTTON_ACTIONS.OPEN_GOOGLE_STORE}
+          action={BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE}
         />
         <RoundButton
           // source={GRAPHICS.ICONS.LIKE_US}
@@ -44,7 +44,7 @@ const CustomFooter: FunctionComponent<Props> = (props) => {
       <View style={[styles.container, props.style]}>
         <RoundButton
           // source={GRAPHICS.ICONS.NO_SOUND}
-          action={BUTTON_ACTIONS.TOGGLE_SOUNDS}
+          action={BUTTON_ACTIONS.TOGGLE_SOUND}
         />
         <RoundButton
           // source={GRAPHICS.ICONS.MUSIC_NOTES}
