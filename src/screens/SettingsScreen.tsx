@@ -7,8 +7,6 @@ import { GLOBAL_STYLES } from "../constants/styles";
 
 /** Enumerations */
 import { MARGIN } from "../constants/styles/Margin";
-import { I18N_KEYS } from "../constants/I18nKeys";
-import { GRAPHICS } from "../constants/Graphics";
 import { PADDING } from "../constants/styles/Padding";
 
 /** Components */
@@ -38,10 +36,7 @@ const SettingsScreen: FunctionComponent<Props> = (props) => {
           <CustomPicker type={PICKER_TYPES.DIFFICULTY_LEVEL} />
         </View>
         <View style={styles.bottomNavigation}>
-          <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT_DOUBLE}
-            style={styles.bottomButton}
-          />
+          <FlatButton style={styles.bottomButton} />
         </View>
       </View>
       <CustomFooter />

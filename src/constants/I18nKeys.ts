@@ -2,7 +2,6 @@ export enum I18N_KEYS {
   home = "home",
   profile = "profile",
   settings = "settings",
-  playerVsAI = "playerVsAI",
   exit = "exit",
   singlePlayer = "singlePlayer",
   multiplayer = "multiplayer",

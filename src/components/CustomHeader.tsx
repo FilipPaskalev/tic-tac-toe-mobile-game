@@ -60,6 +60,7 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
     }
   };
 
+  console.log(screenName.charAt(0).toLowerCase() + screenName.slice(1));
   return (
     <View style={[styles.container, props.style]}>
       {setLeftIcon(screenName)}

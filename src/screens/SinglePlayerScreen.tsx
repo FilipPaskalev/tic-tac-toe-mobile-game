@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Text, View, StatusBar, StyleSheet } from "react-native";
+import { View, StatusBar, StyleSheet } from "react-native";
 import i18n from "i18n-js";
 
 /** Constants */
@@ -8,7 +8,6 @@ import { GLOBAL_STYLES } from "../constants/styles";
 /** Enumerations */
 import { MARGIN } from "../constants/styles/Margin";
 import { I18N_KEYS } from "../constants/I18nKeys";
-import { GRAPHICS } from "../constants/Graphics";
 import { PADDING } from "../constants/styles/Padding";
 
 /** Components */
@@ -18,7 +17,6 @@ import FlatButton from "../components/buttons/FlatButton";
 import CustomPicker from "../components/CustomPicker";
 import { PICKER_TYPES } from "../constants/PickerTypes";
 import { SIZES } from "../constants/sizes";
-import { BUTTON_ACTIONS } from "../constants/ButtonActions";
 
 type Props = {};
 
@@ -40,10 +38,8 @@ const SinglePlayerScreen: FunctionComponent<Props> = (props) => {
         </View>
         <View style={styles.bottomNavigation}>
           <FlatButton
-            source={GRAPHICS.BUTTONS.FLAT}
             style={styles.bottomButton}
             label={i18n.t(I18N_KEYS.start)}
-            action={BUTTON_ACTIONS.NAVIGATE_TO_GAME_SCREEN}
           />
         </View>
       </View>

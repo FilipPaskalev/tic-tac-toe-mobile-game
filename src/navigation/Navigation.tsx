@@ -11,7 +11,6 @@ import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import FaqScreen from "../screens/FaqScreen";
 import SinglePlayerScreen from "../screens/SinglePlayerScreen";
-import GameScreen from "../screens/GameScreen";
 
 const MainStack = createStackNavigator();
 
@@ -38,7 +37,6 @@ function Navigation() {
           name={SCREE_NAMES.SINGLE_PLAYER}
           component={SinglePlayerScreen}
         />
-        <MainStack.Screen name={SCREE_NAMES.GAME} component={GameScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
   );
