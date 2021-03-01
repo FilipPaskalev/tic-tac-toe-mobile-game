@@ -10,6 +10,7 @@ import Letterpress from "../Letterpress";
 
 /** Enumerations */
 import { BUTTON_ACTIONS } from "../../constants/ButtonActions";
+import { SCREE_NAMES } from "../../constants/ScreenNames";
 
 type Props = {
   style?: object;
@@ -21,13 +22,22 @@ type Props = {
 const FlatButton: FunctionComponent<Props> = (props) => {
   const navigation = useNavigation();
 
-  function action(actionType: BUTTON_ACTIONS) {}
+  function actionExecuter() {
+    switch (props.action) {
+      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SCREEN: {
+        navigation.navigate(SCREE_NAMES.SINGLE_PLAYER);
+      }
+      case BUTTON_ACTIONS.NAVIGATE_TO_GAME_SCREEN: {
+        navigation.navigate(SCREE_NAMES.GAME);
+      }
+      default: {
+        break;
+      }
+    }
+  }
 
   return (
-    <TouchableOpacity
-      style={props.style}
-      onPress={() => props.action && action(props.action)}
-    >
+    <TouchableOpacity style={props.style} onPress={() => actionExecuter()}>
       {props.source && (
         <ImageBackground source={props.source} style={styles.image}>
           {props.label && <Letterpress>{props.label}</Letterpress>}
