@@ -23,14 +23,13 @@ type Props = {
 const CustomHeader: FunctionComponent<Props> = (props) => {
   const screenName = useRoute().name;
 
+  console.log(screenName);
+
   const setRightIcon = (screenName: string) => {
     switch (screenName) {
       case SCREE_NAMES.HOME: {
         return (
-          <RoundButton
-            // source={GRAPHICS.ICONS.SETTINGS}
-            action={BUTTON_ACTIONS.NAVIGATE_TO_SETTINGS_SCREEN}
-          />
+          <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_SETTINGS_SCREEN} />
         );
       }
       default: {
@@ -43,27 +42,17 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
     switch (screenName) {
       case SCREE_NAMES.HOME: {
         return (
-          <RoundButton
-            // source={GRAPHICS.ICONS.AVATAR}
-            action={BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN}
-          />
+          <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN} />
         );
       }
       case SCREE_NAMES.SETTINGS: {
-        return (
-          <RoundButton
-            // source={GRAPHICS.ICONS.ARROW}
-            action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN}
-          />
-        );
+        return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
       }
       case SCREE_NAMES.PROFILE: {
-        return (
-          <RoundButton
-            // source={GRAPHICS.ICONS.ARROW}
-            action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN}
-          />
-        );
+        return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
+      }
+      case SCREE_NAMES.SINGLE_PLAYER: {
+        return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
       }
       default: {
         return <View />;
