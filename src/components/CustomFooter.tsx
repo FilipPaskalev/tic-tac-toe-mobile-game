@@ -1,14 +1,15 @@
 import React, { FunctionComponent } from "react";
 import { useRoute } from "@react-navigation/native";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 /** Constants */
-import { GRAPHICS } from "../constants/Graphics";
 import { SIZES } from "../constants/sizes";
 import { GLOBAL_STYLES } from "../constants/styles";
 
 /** Components */
 import RoundButton from "./buttons/RoundButton";
+
+/** Enumerations */
 import { SCREE_NAMES } from "../constants/ScreenNames";
 import { BUTTON_ACTIONS } from "../constants/ButtonActions";
 
@@ -21,39 +22,18 @@ const CustomFooter: FunctionComponent<Props> = (props) => {
   if (screenName === SCREE_NAMES.HOME) {
     return (
       <View style={[styles.container, props.style]}>
-        <RoundButton
-          // source={GRAPHICS.ICONS.SHARE}
-          action={BUTTON_ACTIONS.OPEN_SHARE_MODAL}
-        />
-        <RoundButton
-          // source={GRAPHICS.ICONS.STORE}
-          action={BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE}
-        />
-        <RoundButton
-          // source={GRAPHICS.ICONS.LIKE_US}
-          action={BUTTON_ACTIONS.RATE_APP}
-        />
-        <RoundButton
-          // source={GRAPHICS.ICONS.QUESTION}
-          action={BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN}
-        />
+        <RoundButton action={BUTTON_ACTIONS.OPEN_SHARE_MODAL} />
+        <RoundButton action={BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE} />
+        <RoundButton action={BUTTON_ACTIONS.RATE_APP} />
+        <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN} />
       </View>
     );
   } else {
     return (
       <View style={[styles.container, props.style]}>
-        <RoundButton
-          // source={GRAPHICS.ICONS.NO_SOUND}
-          action={BUTTON_ACTIONS.TOGGLE_SOUND}
-        />
-        <RoundButton
-          // source={GRAPHICS.ICONS.MUSIC_NOTES}
-          action={BUTTON_ACTIONS.TOGGLE_MUSIC}
-        />
-        <RoundButton
-          // source={GRAPHICS.ICONS.QUESTION}
-          action={BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN}
-        />
+        <RoundButton action={BUTTON_ACTIONS.TOGGLE_SOUND} />
+        <RoundButton action={BUTTON_ACTIONS.TOGGLE_MUSIC} />
+        <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN} />
       </View>
     );
   }
