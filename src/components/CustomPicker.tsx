@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
+  Dimensions,
 } from "react-native";
 import i18n from "i18n-js";
 
@@ -36,6 +37,12 @@ function getLabel(type: PICKER_TYPES) {
     case PICKER_TYPES.DIFFICULTY_LEVEL: {
       return i18n.t(I18N_KEYS.difficultyLevel);
     }
+    case PICKER_TYPES.CHOOSE_YOUR_SIDE: {
+      return i18n.t(I18N_KEYS.chooseYourSide);
+    }
+    case PICKER_TYPES.CHOOSE_FIRST_PLAYER: {
+      return i18n.t(I18N_KEYS.chooseFirstPlayer);
+    }
     default: {
       return "";
     }
@@ -43,7 +50,7 @@ function getLabel(type: PICKER_TYPES) {
 }
 
 function getData(pickerType: PICKER_TYPES) {
-  let data = [""];
+  let data = [i18n.t(I18N_KEYS.x), i18n.t(I18N_KEYS.o)];
   switch (pickerType) {
     case PICKER_TYPES.LANGUAGE: {
       data = [i18n.t(I18N_KEYS.english), i18n.t(I18N_KEYS.bulgarian)];
@@ -87,7 +94,16 @@ const CustomPicker: FunctionComponent<Props> = (props) => {
           <Image source={GRAPHICS.BUTTONS.PICKER_LEFT} style={styles.arrow} />
         </TouchableOpacity>
         <ImageBackground source={GRAPHICS.FIELDS.PICKER_LONG} style={styles.bg}>
-          <Letterpress>{value}</Letterpress>
+          <Letterpress
+            style={
+              props.type === PICKER_TYPES.CHOOSE_YOUR_SIDE ||
+              props.type === PICKER_TYPES.CHOOSE_FIRST_PLAYER
+                ? styles.xYLetters
+                : styles.otherLetters
+            }
+          >
+            {value}
+          </Letterpress>
         </ImageBackground>
         <TouchableOpacity
           onPress={() => {
@@ -127,6 +143,13 @@ const styles = StyleSheet.create({
   },
   arrow: {
     ...SIZES.PICKER_ARROW_XXL,
+  },
+  xYLetters: {
+    color: "#FFF",
+    fontSize: 48,
+  },
+  otherLetters: {
+    color: "#F0f",
   },
 });
 
