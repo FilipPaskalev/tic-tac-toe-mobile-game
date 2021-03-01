@@ -2,6 +2,7 @@
   "home": "home",
   "profile": "profile",
   "settings": "settings",
+  "playerVsAI": "player vs ai",
   "exit": "exit",
   "singlePlayer": "single player",
   "multiplayer": "multiplayer",
@@ -18,5 +19,11 @@
   "pink": "pink",
   "green": "green",
   "update": "update",
-  "reset": "reset"
+  "reset": "reset",
+  "chooseYourSide": "choose your side",
+  "chooseDifficultyLevel": "choose difficulty level",
+  "chooseFirstPlayer": "choose first player",
+  "start": "start",
+  "x": "x",
+  "o": "o"
 }
