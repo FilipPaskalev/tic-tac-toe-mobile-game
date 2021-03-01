@@ -16,6 +16,7 @@ import { MARGIN } from "../constants/styles/Margin";
 import { PADDING } from "../constants/styles/Padding";
 import { I18N_KEYS } from "../constants/I18nKeys";
 import { SIZES } from "../constants/sizes";
+import { BUTTON_ACTIONS } from "../constants/ButtonActions";
 
 type Props = {};
 
@@ -31,6 +32,7 @@ const HomeScreen: FunctionComponent<Props> = (props) => {
             source={GRAPHICS.BUTTONS.FLAT}
             label={I18n.t(I18N_KEYS.singlePlayer)}
             style={styles.button}
+            action={BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SCREEN}
           />
           <FlatButton
             source={GRAPHICS.BUTTONS.FLAT}
