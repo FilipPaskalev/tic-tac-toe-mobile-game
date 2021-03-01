@@ -2,6 +2,7 @@ export enum I18N_KEYS {
   home = "home",
   profile = "profile",
   settings = "settings",
+  playerVsAI = "playerVsAI",
   exit = "exit",
   singlePlayer = "singlePlayer",
   multiplayer = "multiplayer",
@@ -19,4 +20,10 @@ export enum I18N_KEYS {
   green = "green",
   update = "update",
   reset = "reset",
+  chooseYourSide = "chooseYourSide",
+  chooseDifficultyLevel = "chooseDifficultyLevel",
+  chooseFirstPlayer = "chooseFirstPlayer",
+  start = "start",
+  x = "x",
+  o = "o",
 }
