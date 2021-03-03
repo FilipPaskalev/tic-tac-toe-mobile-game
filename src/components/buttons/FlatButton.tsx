@@ -12,7 +12,7 @@ import { SCREE_NAMES } from "../../constants/ScreenNames";
 import { I18N_KEYS } from "../../constants/I18nKeys";
 
 /** Constants */
-import { GRAPHICS } from "../../constants/Graphics";
+import { getFlatButtonBackground } from "../../constants/Graphics";
 import { SIZES } from "../../constants/sizes";
 import { MARGIN } from "../../constants/styles/Margin";
 
@@ -60,7 +60,7 @@ const FlatButton: FunctionComponent<Props> = (props) => {
 
   return (
     <TouchableOpacity style={props.style} onPress={() => actionExecuter()}>
-      <ImageBackground source={GRAPHICS.BUTTONS.FLAT} style={styles.image}>
+      <ImageBackground source={getFlatButtonBackground()} style={styles.image}>
         <Letterpress>{label}</Letterpress>
       </ImageBackground>
     </TouchableOpacity>

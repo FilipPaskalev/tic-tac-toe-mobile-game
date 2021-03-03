@@ -8,8 +8,11 @@ import {
 } from "react-native";
 
 /** Constants */
-import { GRAPHICS } from "../../constants/Graphics";
 import { SIZES } from "../../constants/sizes";
+import {
+  getRoundButtonIcon,
+  getRoundButtonBackground,
+} from "../../constants/Graphics";
 
 /** Enumerations */
 import { BUTTON_ACTIONS } from "../../constants/ButtonActions";
@@ -20,59 +23,9 @@ type Props = {
   action?: BUTTON_ACTIONS;
 };
 
-function getIconGraphic(actionType?: BUTTON_ACTIONS) {
-  switch (actionType) {
-    case BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN: {
-      return GRAPHICS.ICONS.BACK_SCREEN_ARROW;
-    }
-    case BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN: {
-      return GRAPHICS.ICONS.AVATAR;
-    }
-    case BUTTON_ACTIONS.NAVIGATE_TO_SETTINGS_SCREEN: {
-      return GRAPHICS.ICONS.SETTINGS;
-    }
-    case BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN: {
-      return GRAPHICS.ICONS.QUESTION;
-    }
-    case BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE: {
-      return GRAPHICS.ICONS.STORE;
-    }
-    case BUTTON_ACTIONS.NAVIGATE_TO_PREVIOUS_SCREEN: {
-      return GRAPHICS.ICONS.BACK_SCREEN_ARROW;
-    }
-    case BUTTON_ACTIONS.RATE_APP: {
-      return GRAPHICS.ICONS.LIKE_US;
-    }
-    case BUTTON_ACTIONS.TOGGLE_MUSIC: {
-      return GRAPHICS.ICONS.MUSIC_ON;
-    }
-    case BUTTON_ACTIONS.MUSIC_ON: {
-      return GRAPHICS.ICONS.MUSIC_ON;
-    }
-    case BUTTON_ACTIONS.MUSIC_OFF: {
-      return GRAPHICS.ICONS.MUSIC_OFF;
-    }
-    case BUTTON_ACTIONS.SOUNDS_ON: {
-      return GRAPHICS.ICONS.SOUNDS_ON;
-    }
-    case BUTTON_ACTIONS.SOUNDS_OFF: {
-      return GRAPHICS.ICONS.SOUNDS_OFF;
-    }
-    case BUTTON_ACTIONS.TOGGLE_SOUND: {
-      return GRAPHICS.ICONS.SOUNDS_ON;
-    }
-    case BUTTON_ACTIONS.OPEN_SHARE_MODAL: {
-      return GRAPHICS.ICONS.SHARE;
-    }
-    default: {
-      return GRAPHICS.ICONS.EMPTY;
-    }
-  }
-}
-
 const RoundButton: FunctionComponent<Props> = (props) => {
   const navigation = useNavigation();
-  const [icon, setIcon] = useState(getIconGraphic(props.action));
+  const [icon, setIcon] = useState(getRoundButtonIcon(props.action));
   const [soundState, setSoundState] = useState(BUTTON_ACTIONS.SOUNDS_OFF);
   const [musicState, setMusicState] = useState(BUTTON_ACTIONS.MUSIC_OFF);
 
@@ -108,14 +61,14 @@ const RoundButton: FunctionComponent<Props> = (props) => {
         musicState === BUTTON_ACTIONS.MUSIC_ON
           ? setMusicState(BUTTON_ACTIONS.MUSIC_OFF)
           : setMusicState(BUTTON_ACTIONS.MUSIC_ON);
-        setIcon(getIconGraphic(musicState));
+        setIcon(getRoundButtonIcon(musicState));
         break;
       }
       case BUTTON_ACTIONS.TOGGLE_SOUND: {
         soundState === BUTTON_ACTIONS.SOUNDS_ON
           ? setSoundState(BUTTON_ACTIONS.SOUNDS_OFF)
           : setSoundState(BUTTON_ACTIONS.SOUNDS_ON);
-        setIcon(getIconGraphic(soundState));
+        setIcon(getRoundButtonIcon(soundState));
         break;
       }
       case BUTTON_ACTIONS.OPEN_SHARE_MODAL: {
@@ -132,7 +85,10 @@ const RoundButton: FunctionComponent<Props> = (props) => {
       style={props.style}
       onPress={() => props.action && actionExecuter(props.action)}
     >
-      <ImageBackground source={GRAPHICS.BUTTONS.ROUND} style={styles.button}>
+      <ImageBackground
+        source={getRoundButtonBackground()}
+        style={styles.button}
+      >
         <Image source={icon} style={styles.icon} />
       </ImageBackground>
     </TouchableOpacity>
