@@ -6,11 +6,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { SCREE_NAMES } from "../constants/ScreenNames";
 
 /** Screens */
-import HomeScreen from "../screens/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import SettingsScreen from "../screens/SettingsScreen";
-import FaqScreen from "../screens/FaqScreen";
-import SinglePlayerScreen from "../screens/SinglePlayerScreen";
+import {
+  HomeScreen,
+  ProfileScreen,
+  SettingsScreen,
+  FaqScreen,
+  SinglePlayerSettingsScreen,
+  SinglePlayerGameScreen,
+} from "../screens";
 
 const MainStack = createStackNavigator();
 
@@ -19,9 +22,8 @@ function Navigation() {
     <NavigationContainer>
       <MainStack.Navigator
         initialRouteName={SCREE_NAMES.HOME}
-        screenOptions={{
-          headerShown: false,
-        }}
+        // hide navigation header in every screen
+        screenOptions={{ headerShown: false }}
       >
         <MainStack.Screen name={SCREE_NAMES.HOME} component={HomeScreen} />
         <MainStack.Screen
@@ -34,8 +36,12 @@ function Navigation() {
         />
         <MainStack.Screen name={SCREE_NAMES.FAQ} component={FaqScreen} />
         <MainStack.Screen
-          name={SCREE_NAMES.SINGLE_PLAYER}
-          component={SinglePlayerScreen}
+          name={SCREE_NAMES.SINGLE_PLAYERS_SETTINGS}
+          component={SinglePlayerSettingsScreen}
+        />
+        <MainStack.Screen
+          name={SCREE_NAMES.SINGLE_PLAYERS_GAME}
+          component={SinglePlayerGameScreen}
         />
       </MainStack.Navigator>
     </NavigationContainer>
