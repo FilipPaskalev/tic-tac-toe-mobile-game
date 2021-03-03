@@ -5,14 +5,15 @@ import { COLORS } from "./Colors";
 import { MARGIN } from "./Margin";
 import { PADDING } from "./Padding";
 
-const SCREEN = {
+const SCREEN = StyleSheet.create({
   screen: {
     flex: 1,
+    alignItems: "center",
     paddingVertical: PADDING.L,
     paddingHorizontal: PADDING.M,
     backgroundColor: COLORS.BG_PRIMARY,
   },
-};
+});
 
 const HEADER = StyleSheet.create({
   header: {
