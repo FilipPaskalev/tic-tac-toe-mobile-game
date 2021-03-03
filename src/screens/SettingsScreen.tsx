@@ -1,26 +1,24 @@
 import React, { FunctionComponent } from "react";
-import { Text, View, StatusBar, StyleSheet } from "react-native";
-import i18n from "i18n-js";
+import { View, StatusBar, StyleSheet } from "react-native";
 
 /** Constants */
 import { GLOBAL_STYLES } from "../constants/styles";
 
 /** Enumerations */
 import { MARGIN } from "../constants/styles/Margin";
-import { PADDING } from "../constants/styles/Padding";
+import { PICKER_TYPES } from "../constants/PickerTypes";
 
 /** Components */
 import CustomHeader from "../components/CustomHeader";
 import CustomFooter from "../components/CustomFooter";
 import FlatButton from "../components/buttons/FlatButton";
 import CustomPicker from "../components/CustomPicker";
-import { PICKER_TYPES } from "../constants/PickerTypes";
-import { SIZES } from "../constants/sizes";
+import { BUTTON_ACTIONS } from "../constants/ButtonActions";
 
 type Props = {};
 
 const SettingsScreen: FunctionComponent<Props> = (props) => {
-  console.log("======== SettingsScreen.tsx LOAD =========");
+  console.log("LOAD ===> SettingsScreen.tsx LOAD");
   return (
     <View style={styles.screen}>
       <StatusBar hidden={true} />
@@ -35,9 +33,7 @@ const SettingsScreen: FunctionComponent<Props> = (props) => {
         <View style={styles.fieldContainer}>
           <CustomPicker type={PICKER_TYPES.DIFFICULTY_LEVEL} />
         </View>
-        <View style={styles.bottomNavigation}>
-          <FlatButton style={styles.bottomButton} />
-        </View>
+        <FlatButton />
       </View>
       <CustomFooter />
     </View>
@@ -49,24 +45,13 @@ const styles = StyleSheet.create({
     ...GLOBAL_STYLES.screen,
   },
   body: {
-    // borderWidth: 1,
     flex: 1,
     alignItems: "center",
     marginTop: MARGIN.M,
     flexDirection: "column",
   },
   fieldContainer: {
-    // borderWidth: 1,
     flexGrow: 1,
-  },
-  bottomNavigation: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingBottom: PADDING.M,
-  },
-  bottomButton: {
-    borderWidth: 1,
-    ...SIZES.BTN_FLAT_DOUBLE_M,
   },
 });
 
