@@ -1,8 +1,8 @@
 import "react-native-gesture-handler";
 import React, { FunctionComponent } from "react";
+import * as Localization from "expo-localization";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
-import * as Localization from "expo-localization";
 import i18n from "i18n-js";
 
 /** Reducers */
@@ -32,7 +32,7 @@ i18n.translations = I18N_DICTIONARY;
 type Props = {};
 
 const App: FunctionComponent<Props> = (props) => {
-  console.log("============== App.tsx LOAD ==============");
+  console.log("LOAD ===> App.tsx");
 
   return (
     <Provider store={store}>
