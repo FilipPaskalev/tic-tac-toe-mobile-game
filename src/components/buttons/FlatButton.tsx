@@ -13,6 +13,8 @@ import { I18N_KEYS } from "../../constants/I18nKeys";
 
 /** Constants */
 import { GRAPHICS } from "../../constants/Graphics";
+import { SIZES } from "../../constants/sizes";
+import { MARGIN } from "../../constants/styles/Margin";
 
 type Props = {
   style?: object;
@@ -25,17 +27,11 @@ const FlatButton: FunctionComponent<Props> = (props) => {
 
   function getLabel() {
     switch (props.action) {
-      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SCREEN: {
+      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SETTINGS_SCREEN: {
         return i18n.t(I18N_KEYS.singlePlayer);
       }
-      case BUTTON_ACTIONS.NAVIGATE_TO_MULTIPLAYER_SCREEN: {
-        return i18n.t(I18N_KEYS.multiplayer);
-      }
-      case BUTTON_ACTIONS.NAVIGATE_TO_PLAY_ONLINE_SCREEN: {
-        return i18n.t(I18N_KEYS.playOnline);
-      }
-      case BUTTON_ACTIONS.NAVIGATE_TO_SCORE_BOARD_SCREEN: {
-        return i18n.t(I18N_KEYS.score);
+      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_GAME_SCREEN: {
+        return i18n.t(I18N_KEYS.start);
       }
       case BUTTON_ACTIONS.EXIT_FROM_APP: {
         return i18n.t(I18N_KEYS.exit);
@@ -48,8 +44,12 @@ const FlatButton: FunctionComponent<Props> = (props) => {
 
   function actionExecuter() {
     switch (props.action) {
-      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SCREEN: {
-        navigation.navigate(SCREE_NAMES.SINGLE_PLAYER);
+      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_SETTINGS_SCREEN: {
+        navigation.navigate(SCREE_NAMES.SINGLE_PLAYERS_SETTINGS);
+        break;
+      }
+      case BUTTON_ACTIONS.NAVIGATE_TO_SINGLE_PLAYER_GAME_SCREEN: {
+        navigation.navigate(SCREE_NAMES.SINGLE_PLAYERS_GAME);
         break;
       }
       default: {
@@ -69,10 +69,12 @@ const FlatButton: FunctionComponent<Props> = (props) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: "100%",
-    height: "100%",
+    // width: "100%",
+    // height: "100%",
     justifyContent: "center",
     alignItems: "center",
+    ...SIZES.BTN_FLAT_M,
+    marginVertical: MARGIN.M,
   },
 });
 

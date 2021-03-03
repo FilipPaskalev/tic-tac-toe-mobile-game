@@ -37,6 +37,9 @@ function getIconGraphic(actionType?: BUTTON_ACTIONS) {
     case BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE: {
       return GRAPHICS.ICONS.STORE;
     }
+    case BUTTON_ACTIONS.NAVIGATE_TO_PREVIOUS_SCREEN: {
+      return GRAPHICS.ICONS.BACK_SCREEN_ARROW;
+    }
     case BUTTON_ACTIONS.RATE_APP: {
       return GRAPHICS.ICONS.LIKE_US;
     }
@@ -87,8 +90,12 @@ const RoundButton: FunctionComponent<Props> = (props) => {
         navigation.navigate(SCREE_NAMES.SETTINGS);
         break;
       }
+      case BUTTON_ACTIONS.NAVIGATE_TO_PREVIOUS_SCREEN: {
+        navigation.goBack();
+        break;
+      }
       case BUTTON_ACTIONS.NAVIGATE_TO_FAQ_SCREEN: {
-        // navigation.navigate(SCREE_NAMES.FAQ);
+        navigation.navigate(SCREE_NAMES.FAQ);
         break;
       }
       case BUTTON_ACTIONS.OPEN_GOOGLE_APP_STORE: {
