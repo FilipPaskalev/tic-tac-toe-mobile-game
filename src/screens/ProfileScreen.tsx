@@ -12,6 +12,7 @@ import { I18N_KEYS } from "../constants/I18nKeys";
 type Props = {};
 
 const ProfileScreen: FunctionComponent<Props> = (props) => {
+  console.log("LOAD ===> ProfileScreen.tsx LOAD");
   return (
     <View style={styles.screen}>
       <StatusBar hidden={true} />
