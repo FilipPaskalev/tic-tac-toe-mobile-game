@@ -15,6 +15,7 @@ import { SCREE_NAMES } from "../constants/ScreenNames";
 /** Components */
 import RoundButton from "./buttons/RoundButton";
 import Letterpress from "./Letterpress";
+import { I18N_KEYS } from "../constants/I18nKeys";
 
 type Props = {
   style?: object;
@@ -22,8 +23,6 @@ type Props = {
 
 const CustomHeader: FunctionComponent<Props> = (props) => {
   const screenName = useRoute().name;
-
-  console.log(screenName);
 
   const setRightIcon = (screenName: string) => {
     switch (screenName) {
@@ -45,29 +44,48 @@ const CustomHeader: FunctionComponent<Props> = (props) => {
           <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_PROFILE_SCREEN} />
         );
       }
-      case SCREE_NAMES.SETTINGS: {
-        return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
-      }
-      case SCREE_NAMES.PROFILE: {
-        return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
-      }
-      case SCREE_NAMES.SINGLE_PLAYER: {
+      case SCREE_NAMES.SINGLE_PLAYERS_GAME: {
         return <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_HOME_SCREEN} />;
       }
       default: {
-        return <View />;
+        return (
+          <RoundButton action={BUTTON_ACTIONS.NAVIGATE_TO_PREVIOUS_SCREEN} />
+        );
       }
     }
   };
 
-  console.log(screenName.charAt(0).toLowerCase() + screenName.slice(1));
+  const setHeaderTitle = (screenName: string) => {
+    switch (screenName) {
+      case SCREE_NAMES.HOME: {
+        return i18n.t(I18N_KEYS.homeScreenTitle);
+      }
+      case SCREE_NAMES.SETTINGS: {
+        return i18n.t(I18N_KEYS.settingsScreenTitle);
+      }
+      case SCREE_NAMES.PROFILE: {
+        return i18n.t(I18N_KEYS.profileScreenTitle);
+      }
+      case SCREE_NAMES.FAQ: {
+        return i18n.t(I18N_KEYS.profileScreenTitle);
+      }
+      case SCREE_NAMES.SINGLE_PLAYERS_SETTINGS: {
+        return i18n.t(I18N_KEYS.singlePlayerSettingsScreenTitle);
+      }
+      case SCREE_NAMES.SINGLE_PLAYERS_GAME: {
+        return i18n.t(I18N_KEYS.singlePlayerGameScreenTitle);
+      }
+      default: {
+        return "";
+      }
+    }
+  };
+
   return (
     <View style={[styles.container, props.style]}>
       {setLeftIcon(screenName)}
       <View style={styles.titleContainer}>
-        <Letterpress>
-          {i18n.t(screenName.charAt(0).toLowerCase() + screenName.slice(1))}
-        </Letterpress>
+        <Letterpress>{setHeaderTitle(screenName)}</Letterpress>
       </View>
       {setRightIcon(screenName)}
     </View>
