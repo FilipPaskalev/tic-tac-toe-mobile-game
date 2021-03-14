@@ -1,11 +1,33 @@
-react v16.13.1
-react-native sdk-40.0.1
-npm v6.14.8
-NodeJs v14.15.0
-Yarn v1.22.5
-typescript 4.0.0
-react-navigation/native 5.9.3
-expo 40.0.0
-expo-status-bar 1.0.3
-react-native-svg@12.1.0
-react-native-localization => https://github.com/stefalda/ReactNativeLocalization
+# Summary
+
+Date : 2021-03-14 02:34:42
+
+Total : 18 files,  76 codes, 0 comments, 18 blanks, all 94 lines
+
+## Languages
+
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| TypeScript | 2 | 70 | 0 | 2 | 72 |
+| TypeScript React | 16 | 6 | 0 | 16 | 22 |
+
+## Directories
+
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 18 | 76 | 0 | 18 | 94 |
+| components | 11 | 0 | 0 | 11 | 11 |
+| components\buttons | 3 | 0 | 0 | 3 | 3 |
+| components\pickers | 2 | 0 | 0 | 2 | 2 |
+| constants | 1 | 70 | 0 | 1 | 71 |
+| navigation | 1 | 6 | 0 | 1 | 7 |
+| screens | 4 | 0 | 0 | 4 | 4 |
+| store | 1 | 0 | 0 | 1 | 1 |
+
+## In the project is used
+
+React Native API 0.63
+EXPO CLI 4.1.6
+EXPO SDK 40
+React navigation 6.x
+React Redux 7.2
