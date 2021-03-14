@@ -54,15 +54,12 @@ Total : 18 files,  76 codes, 0 comments, 18 blanks, all 94 lines
 ## In the project is used
 
 ![Alt text](https://reactnative.dev/img/header_logo.svg)
-<img src="https://reactnative.dev/img/header_logo.svg">
 React Native API 0.63
+![Alt text](https://reactnative.dev/img/header_logo.svg)
 EXPO CLI 4.1.6
+![Alt text](https://reactnative.dev/img/header_logo.svg)
 EXPO SDK 40
+![Alt text](https://reactnative.dev/img/header_logo.svg)
 React navigation 6.x
-React Redux 7.2
-
-React Native API 0.63
-EXPO CLI 4.1.6
-EXPO SDK 40
-React navigation 6.x
+![Alt text](https://reactnative.dev/img/header_logo.svg)
 React Redux 7.2
